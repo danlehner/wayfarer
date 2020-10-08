@@ -6,7 +6,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>{{title}}}</title>
+  <title>{{title}}</title>
   
   <!-- LINKS  -->
   <link rel="stylesheet" type="text/css" href="{% static '/styles/Semantic-UI-CSS-master/semantic.min.css' %}">
@@ -26,11 +26,10 @@
 <body id="root">
   <nav>
     <div class="ui small menu">
-      <a class="active item">
-        Wayfarer
-      </a>
+      <a class="item">Wayfarer</a>
       <a class="item">
-        post
+        <!-- <a href="/post/" class="ui primary button">Post</a> -->
+        <button class=" ui primary button">Post</button>
       </a>
       <div class="right menu">
         <div class="item">
@@ -47,10 +46,10 @@
     {% block content %}
     {% endblock %}
   </main>
-  <footer>
+  <!-- <footer>
     <div class="ui container" id="footer">
         <p> &copy; 2020 wayfarer &nbsp; </p>
     </div>
-  </footer>
+  </footer> -->
 </body>
 </html>
