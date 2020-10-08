@@ -1,6 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.contrib import auth
 from django.contrib.auth.models import User
+from main_app.models import Profile
 
 # Create your views here.
 
@@ -8,7 +9,6 @@ def signup(request):
   if request.method == "POST": 
     name = request.POST['name']
     current_city = request.POST['current_city']
-    date_joined = request.POST['date_joined']
     username_form = request.POST['username']
     email_form = request.POST['email']
     password = request.POST['password']
@@ -24,10 +24,10 @@ def signup(request):
         user = User.objects.create_user(
           username=username_form,
           email=email_form,
-          password=password,
-          name=name,
-          current_city=current_city,
-          date_joined=date_joined)
+          password=password)
         user.save() 
+        profile = Profile(current_city=current_city, name=name, user=user)
+        profile.save()
+        return redirect('/')
   return render(request, 'signup.html')
 
