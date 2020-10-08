@@ -23,9 +23,20 @@
 </head>
 <body id="root">
   <nav>
-    <div class="ui yellow inverted menu">
-      <div class="ui container">
-          <p> wayfarer </p>
+    <div class="ui small menu">
+      <a class="active item">
+        Wayfarer
+      </a>
+      <a class="item">
+        post
+      </a>
+      <div class="right menu">
+        <div class="item">
+          <div class="ui primary button">login</div>
+        </div>
+        <div class="item">
+            <div class="ui primary button">signup</div>
+        </div>
       </div>
     </div>
   </nav>
@@ -35,7 +46,7 @@
     {% endblock %}
   </main>
   <footer>
-    <div class="ui container">
+    <div class="ui container" id="footer">
         <p> &copy; 2020 wayfarer &nbsp; </p>
     </div>
   </footer>
