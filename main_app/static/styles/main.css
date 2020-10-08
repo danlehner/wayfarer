@@ -1,3 +1,5 @@
-#hero {
-    max-height: 50%;
+#footer {
+    background-color: red;
+    position:fixed;
+    bottom:0;
 }
