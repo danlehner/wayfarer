@@ -1,23 +1,45 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Wayfarer</title>
-  <link rel="stylesheet" type="text/css" href="../static/styles/Semantic-UI-CSS-master/semantic.min.css">
-<script defer
-  src="https://code.jquery.com/jquery-3.1.1.min.js"
-  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-  crossorigin="anonymous"></script>
-<script defer src="../static/styles/Semantic-UI-CSS-master/semantic.min.js"></script>
-<script defer src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+  <title>{{title}}</title>
+  
+  <!-- LINKS  -->
+  <link rel="stylesheet" type="text/css" href="{% static '/styles/Semantic-UI-CSS-master/semantic.min.css' %}">
+  <link rel="stylesheet" href="{% static 'styles/main.css' %}">
+  <!-- SCRIPTS  -->
+  <script defer
+    src="https://code.jquery.com/jquery-3.1.1.min.js"
+    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+    crossorigin="anonymous">
+  </script>
+  <script defer src="{% static '/styles/Semantic-UI-CSS-master/semantic.min.js' %}"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
 
 </head>
-<body>
-  <main>
+<body id="root">
+  <nav>
+    <div class="ui yellow inverted menu">
+      <div class="ui container">
+          <p> wayfarer </p>
+      </div>
+    </div>
+  </nav>
+  
+  <main class="ui conatainer">
     {% block content %}
     {% endblock %}
   </main>
+  <footer>
+    <div id="footer">
+      <div class="ui container">
+          <p> &copy; 2020 wayfarer &nbsp; </p>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
