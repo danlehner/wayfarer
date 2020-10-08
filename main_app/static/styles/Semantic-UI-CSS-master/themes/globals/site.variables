@@ -1,0 +1,22 @@
+/*******************************
+         Site Settings
+*******************************/
+
+/*-------------------
+       Fonts
+--------------------*/
+
+@fontName          : 'Lato';
+@fontSmoothing     : antialiased;
+@importGoogleFonts : true;
+
+/*-------------------
+    wayfarer colors
+--------------------*/
+
+@primaryColor        : @orange
+@secondaryColor      : @red;
+        
+
+/*--- colors ---*/
+@orange           : #ffcd3cff;
