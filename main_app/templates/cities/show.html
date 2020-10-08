@@ -2,6 +2,16 @@
 
 {% block content %}
 
-{{city.name}}
+<div class="ui left floated cards four wide column vertical segments">
+    <div class= "ui top attached medium header">All Cities</div>
+    {% for town in towns %}
+        <a href="{% url 'city_show' town.id %}" class="ui card">
+            <div class="content">
+                <img src="{{town.image}}" alt="{{town.name}}" class="ui left floated small image">
+                <h4 class="ui right floated">{{town.name}}</h4>
+            </div>
+        </a>
+    {% endfor %}
+</div>
 
 {% endblock content %}

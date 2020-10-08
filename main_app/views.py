@@ -10,5 +10,6 @@ def home(request):
 # city routes
 def city_show(request , city_id):
   city = City.objects.get(id = city_id)
-  context = {'city': city, 'title': city.name}
+  towns = City.objects.all()
+  context = {'city': city, 'title': city.name, 'towns': towns}
   return render(request, 'cities/show.html', context)
