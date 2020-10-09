@@ -95,7 +95,7 @@
         Login
       </div>
         <div class="content">
-          <form class="ui form" action="{% url 'login' %}" method="POST">
+          <form class="ui form" action="{% url 'signup' %}" method="POST">
             {% csrf_token %}
             <p class="field">
               <label for="name">Full Name</label>
