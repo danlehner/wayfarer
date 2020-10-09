@@ -1,22 +1,19 @@
 {% extends 'base.html' %}
 {% block content %}
 
+<section style="width: 50%;
+margin: 0 auto;">
 <h1>Sign Up</h1>
-
-<div class="ui horizontal divider">
-  <form class="ui form segment" action="{% url 'signup' %}" method="POST">
+  <form class="ui form" action="{% url 'signup' %}" method="POST">
     {% csrf_token %}
-    <div class="two fields">
-      <p class="field">
-        <label for="name">Name</label>
-        <input type="text" name="name" maxlength="50" minlength="2" required>
-      </p>
-      <p class="field">
-        <label for="current_city">Current City</label>
-        <input type="text" name="current_city" maxlength="50" minlength="2" required>
-      </p>
-    </div>
-    <div class="three fields">
+    <p class="field">
+      <label for="name">Full Name</label>
+      <input type="text" name="name" maxlength="50" minlength="2" required>
+    </p>
+    <p class="field">
+      <label for="current_city">Current City</label>
+      <input type="text" name="current_city" maxlength="50" minlength="2" required>
+    </p>
       <p class="field">
         <label for="username">Username</label>
         <input type="text" name="username" maxlength="25" minlength="2" required>
@@ -29,14 +26,14 @@
         <label for="password">Password</label>
         <input type="password" name="password" maxlength="50" minlength="4" required>
       </p>
-    </div>
-    <button type="submit">Sign Up</button>
+    <button class="ui button"  type="submit">Sign Up</button>
   </form>
-</div>
+</section>
 
 {% endblock %}
 
-<!-- <script>
+<script>
+
 $('.ui.form')
   .form({
     fields: {
@@ -48,7 +45,38 @@ $('.ui.form')
             prompt : 'Please enter your name'
           }
         ]
+      }, 
+      current_city: {
+        identifier: 'name', 
+        rules: [
+          {
+            type : 'empty', 
+            prompt : 'Please enter the city you live in'
+          }
+        ]
+      }, 
+      username: {
+        identifier: 'username',
+        rules: [
+          {
+            type   : 'empty',
+            prompt : 'Please enter a username'
+          }
+        ]
+      },
+      password: {
+        identifier: 'password',
+        rules: [
+          {
+            type   : 'empty',
+            prompt : 'Please enter a password'
+          },
+          {
+            type   : 'minLength[6]',
+            prompt : 'Your password must be at least {ruleValue} characters'
+          }
+        ]
       }
     }
   })
-</script> -->
+</script>

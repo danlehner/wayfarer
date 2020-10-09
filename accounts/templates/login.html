@@ -1,19 +1,22 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>Log In</h1>
 
-<form action="{% url 'login' %}" method="POST">
+<section style="width: 50%;
+margin: 0 auto;">
+<h1>Log In</h1>
+<form class="ui form" action="{% url 'login' %}" method="POST">
   {% csrf_token %}
-  <p>
+  <p class="field">
     <label for="username">Username</label>
     <input type="text" name="username" required>
   </p>
-  <p>
+  <p class="field">
     <label for="password">Password</label>
     <input type="password" name="password" required>
   </p>
   <button type="submit">Login</button>
 </form>
+</section>
 
 {% endblock %}

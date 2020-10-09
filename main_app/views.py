@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import City, Post
+from .models import City, Post, Profile
 
 # Create your views here.
 # ===== MAIN ===== #
@@ -37,4 +37,15 @@ def post_edit(request, post_id):
 
 # post delete
 def post_delete(request, post_id):
+  pass
+
+# ==== PROFILE ==== #
+def profile_show(request, profile_id): 
+  profile = Profile.objects.get(id=profile_id)
+  posts = profile.post_set.all()
+  context = {'profile': profile, 'title': profile.name, 'posts': posts}
+  return render(request, 'profile/show.html', context)
+
+
+def profile_edit(request, profile_id): 
   pass
