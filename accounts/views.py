@@ -28,6 +28,20 @@ def signup(request):
         user.save() 
         profile = Profile(current_city=current_city, name=name, user=user)
         profile.save()
-        return redirect('/')
+        return redirect('/accounts/login')
   return render(request, 'signup.html')
+
+def login(request): 
+    if request.method == 'POST': 
+      username_form = request.POST['username']
+      password_form = request.POST['password']
+      user = auth.authenticate(username=username_form, password=password_form)
+      if user is not None: 
+        auth.login(request, user)
+        return redirect('/')
+      else: 
+        context = {'error': 'Invalid credentials'}
+        return render(request, 'login.html', context)
+    else: 
+      return render(request, 'login.html')
 
