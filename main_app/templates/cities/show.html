@@ -29,13 +29,15 @@
                     <i class="plus icon"></i>
                 </button>
             </div>
-                <div class="ui cards vertical segments green row">
+                <div class="ui cards vertical segments row">
                 {% for post in posts %}
                     <div class="ui card segment">
                         <h4 class="ui header">{{ post.title }}
                             <div class="sub header">By: {{post.author}} - {{post.date_created}}</div>
                         </h4>
-                        <div class="description">{{ post.text }}</div>
+                        <div class="description">
+                        {{ post.text }}
+                        </div>
                     </div>
                 {% endfor %}
                 </div>

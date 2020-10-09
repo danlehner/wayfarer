@@ -1,7 +1,9 @@
 from django.shortcuts import render, redirect
 from .models import City, Post, Profile
+
 from .forms import Profile_Form
 from django.contrib.auth.models import User
+
 
 # Create your views here.
 # ===== MAIN ===== #
@@ -16,7 +18,7 @@ def home(request):
 
 ## ===== CITY ===== #
 # city routes
-def city_show(request , city_id):
+def city_show(request, city_id):
   city = City.objects.get(id = city_id)
   towns = City.objects.all()
   posts = city.post_set.all()
@@ -34,7 +36,16 @@ def post_show(request, post_id):
 
 # post edit
 def post_edit(request, post_id):
-  pass
+  post = Post.objects.get(id = post_id)
+  if request.method == 'POST':
+    post_form = Post_Form(request.POST, instance=post)
+    if post_form.is_valid():
+      post_form.save()
+      return redirect('post_show', post_id=post_id)
+  else:
+    post_form = Post_Form(instance = post)
+  context = {'post': post, 'post_form': post_form, 'title': f"Edit {post.title}"}
+  return render(request, 'posts/edit.html', context)
 
 
 # post delete
