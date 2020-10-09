@@ -5,6 +5,11 @@
 <section style="width: 50%;
 margin: 0 auto;">
 <h1>Log In</h1>
+
+ {% if error %}
+  <p>{{error}}</p>
+ {% endif %}
+
 <form class="ui form" action="{% url 'login' %}" method="POST">
   {% csrf_token %}
   <p class="field">
