@@ -9,8 +9,8 @@
     <p>From {{ profile.current_city }}</p>
     <p>Joined Wayfarer on {{ profile.date_joined }}</p>
       <div class="two column row">
-        <a href="" class="ui button green" id="btn">Edit</a>
-        <a href="" class="ui button red" id="btn">Delete</a>
+        <a href="/profile/{{profile.id}}/edit" class="ui button green" id="btn">Edit</a>
+        <a href="/profile/{{user.id}}/delete" class="ui button red" id="btn">Delete</a>
       </div>
   </div>
   <div class="ui six wide column">

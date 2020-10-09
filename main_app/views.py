@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import City, Post, Profile
 from .forms import Profile_Form
+from django.contrib.auth.models import User
 
 # Create your views here.
 # ===== MAIN ===== #
@@ -61,3 +62,7 @@ def profile_edit(request, profile_id):
   return render(request, 'profile/edit.html', context)
 
   
+def profile_delete(request, user_id): 
+  User.objects.get(id=user_id).delete() 
+  return redirect("/")
+
