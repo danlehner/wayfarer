@@ -42,7 +42,8 @@ def post_delete(request, post_id):
 # ==== PROFILE ==== #
 def profile_show(request, profile_id): 
   profile = Profile.objects.get(id=profile_id)
-  context = {'profile': profile, 'title': profile.name}
+  posts = profile.post_set.all()
+  context = {'profile': profile, 'title': profile.name, 'posts': posts}
   return render(request, 'profile/show.html', context)
 
 
