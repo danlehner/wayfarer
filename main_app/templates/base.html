@@ -49,10 +49,10 @@
     {% else %}
     <div class="right menu">
       <div class="item">
-        <a href="{% url 'login' %}" class="ui button" id="btn">login</a>
+        <a class="ui button" id="app_login">login</a>
       </div>
       <div class="item">
-        <a href="{% url 'signup' %}" class="ui button" id="btn">signup</a>
+        <a class="ui button" id="app_signup">signup</a>
       </div>
     </div>
     {% endif %}
@@ -62,5 +62,69 @@
     {% block content %}
     {% endblock %}
   </main>
+  <section id="login_modal">
+    <div class="ui login modal">
+      <i class="close icon"></i>
+      <div class="header">
+        Login
+      </div>
+        <div class="content">
+          <form class="ui form" action="{% url 'login' %}" method="POST">
+            {% csrf_token %}
+            <p class="field">
+              <label for="username">Username</label>
+              <input type="text" name="username" required>
+            </p>
+            <p class="field">
+              <label for="password">Password</label>
+              <input type="password" name="password" required>
+            </p>
+            <div class="actions">
+              <button class="ui yellow cancel button" type="submit">Cancel</button>
+              <button class="ui green button" type="submit">Login</button>
+            </div>
+          </form>
+        </div>
+    </div> 
+  </section>
+  
+  <section id="signup_modal">
+    <div class="ui signup modal">
+      <i class="close icon"></i>
+      <div class="header">
+        Login
+      </div>
+        <div class="content">
+          <form class="ui form" action="{% url 'login' %}" method="POST">
+            {% csrf_token %}
+            <p class="field">
+              <label for="name">Full Name</label>
+              <input type="text" name="name" maxlength="50" minlength="2" required>
+            </p>
+            <p class="field">
+              <label for="current_city">Current City</label>
+              <input type="text" name="current_city" maxlength="50" minlength="2" required>
+            </p>
+              <p class="field">
+                <label for="username">Username</label>
+                <input type="text" name="username" maxlength="25" minlength="2" required>
+              </p>
+              <p class="field">
+                <label for="email">Email</label>
+                <input type="text" name="email" maxlength="25" minlength="2" required>
+              </p>
+              <p class="field">
+                <label for="password">Password</label>
+                <input type="password" name="password" maxlength="50" minlength="4" required>
+              </p>
+            <div class="actions">
+              <button class="ui yellow cancel button" type="submit">Cancel</button>
+              <button class="ui green button" type="submit">Signup</button>
+            </div>
+          </form>
+        </div>
+    </div> 
+  </section>
+
 </body>
 </html>
