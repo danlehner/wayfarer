@@ -1,14 +1,23 @@
-#footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 60px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    background-color: #ffcd3cff;
-    margin-top: 0;
-    margin-bottom: 0;
-    text-align: center;
+:root {
+    --backgroundcolor: #fffaf1ff;
+    --wayfarerRed: #d92027ff;
+    --wayfarerYellow: #ffcd3cff;
+    --wayfarerOrange: #ff9234ff;
+    --wayfarerGreen: #35d0baff;
+
+}
+
+
+#body {
+    background-color: var(--backgroundcolor);
+}
+
+#nav {
+    background-color: var(--wayfarerYellow);
+}
+
+#btn .ui button {
+    background-color: var(--backgroundcolor)!important;
 }
 
 #hero {
