@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1 class="ui header huge">{{post.title}}</h1>
+
+<form action="{% url 'post_edit' post.id %}" method="POST">
+    {% csrf_token %}
+    {{ post_form.as_p}}
+    <input type="submit" class="button" value="Update {{post.title}}">
+</form>
+
+{% endblock %}

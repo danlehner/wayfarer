@@ -20,8 +20,8 @@
     <div class="description">
       <p>{{ post.text }}</p>
     </div>
-    <div class="ui buttons">
-      <button class="ui green button">Edit</button>
+    <div class="ui large buttons">
+      <a href="{% url 'post_edit' post.id %}"><button class="ui green button">Edit</button></a>
       <div class="or"></div>
       <button class="ui red button">Delete</button>
     </div>
