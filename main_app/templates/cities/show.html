@@ -25,7 +25,7 @@
             <div>
                 <div class="row">
                     <span class="ui large header">Posts</span>
-                    <button class= "ui circular red big right floated button">+</button>
+                    <button class= "ui circular red big right floated button" id="add_post">+</button>
                 </div>
                 <div class="ui cards vertical segments green row">
                 {% for post in posts %}
@@ -39,6 +39,14 @@
                 </div>
             </div>
         </div>
+    </div>
+</div>
+
+<div class="ui modal">
+    <i class="close icon"></i>
+    <div class="header">
+        Add Post
+    </div>
     </div>
 </div>
 

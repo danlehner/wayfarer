@@ -10,7 +10,7 @@
   
   <!-- LINKS  -->
   <link rel="stylesheet" type="text/css" href="{% static '/styles/Semantic-UI-CSS-master/semantic.min.css' %}">
-  <link rel="stylesheet" href="{% static '/styles/main.css' %}">
+  <link rel="stylesheet" href='{% static "/styles/main.css" %}'>
   <!-- SCRIPTS  -->
   <script defer
     src="https://code.jquery.com/jquery-3.1.1.min.js"
@@ -21,7 +21,8 @@
   <script defer 
     src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js">
   </script>
-
+  <script defer src='{% static "/scripts/app.js" %}'>
+  </script>
 </head>
 <body id="root">
   <nav>
