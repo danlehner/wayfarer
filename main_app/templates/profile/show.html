@@ -1,18 +1,27 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h2>{{title}}</h2>
 
-<div class="ui fluid placeholder">
-  <div class="image header">
-    <p>{{ profile.name }}</p>
-    <div class="line"></div>
-    <div class="line"></div>
+<div class="ui celled grid container">
+  <div class="ui six wide column">
+    <img class="ui image circular small" src="https://semantic-ui.com/images/avatar/small/steve.jpg" alt="">
+    <h2>{{ title }}</h2>
+    <p>From {{ profile.current_city }}</p>
+    <p>Joined Wayfarer on {{ profile.date_joined }}</p>
+      <div class="two column row">
+        <a href="/profile/{{profile.id}}/edit" class="ui button green" id="btn">Edit</a>
+        <a href="/profile/{{user.id}}/delete" class="ui button red" id="btn">Delete</a>
+      </div>
   </div>
-  <div class="paragraph">
-    <div class="line"></div>
-    <div class="line"></div>
-    <div class="line"></div>
+  <div class="ui six wide column">
+    <h2>{{ title}}'s Posts</h2>
+    {% for post in posts %}
+    <a href="/posts/{{ post.id }}"> 
+      <div class="ui card">
+        <h4 class="ui header">{{ post.title }} </h4>
+      </div>
+    </a>
+    {% endfor %}
   </div>
 </div>
 

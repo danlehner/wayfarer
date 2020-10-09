@@ -38,7 +38,7 @@ def login(request):
       user = auth.authenticate(username=username_form, password=password_form)
       if user is not None: 
         auth.login(request, user)
-        return redirect('/')
+        return redirect('profile_show', profile_id = user.profile.id)
       else: 
         context = {'error': 'Invalid credentials'}
         return render(request, 'login.html', context)

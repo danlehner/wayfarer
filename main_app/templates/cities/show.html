@@ -22,18 +22,22 @@
                 <div class="ui large header">{{city.name}}</div>
                 <img src="{{city.image}}" alt="{{city.name}}" class="ui right floated medium image">
             </div>
-            <div>
-                <div class="row">
-                    <span class="ui large header">Posts</span>
-                    <button class= "ui circular red big right floated button" id="add_post">+</button>
-                </div>
-                <div class="ui cards vertical segments green row">
+
+            <div class="row">
+                <span class="ui large header">Posts</span>
+                <button class= "ui circular icon red button" id="add_post">
+                    <i class="plus icon"></i>
+                </button>
+            </div>
+                <div class="ui cards vertical segments row">
                 {% for post in posts %}
                     <div class="ui card segment">
                         <h4 class="ui header">{{ post.title }}
                             <div class="sub header">By: {{post.author}} - {{post.date_created}}</div>
                         </h4>
-                        <div class="description">{{ post.text }}</div>
+                        <div class="description">
+                        {{ post.text }}
+                        </div>
                     </div>
                 {% endfor %}
                 </div>
