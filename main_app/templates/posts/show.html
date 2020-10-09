@@ -1,23 +1,22 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h2>Post Details</h2>
 
-<div class="ui fluid placeholder">
-  <div class="image header">
-    <div class="line"></div>
-    <div class="line"></div>
-  </div>
-  <div class="paragraph">
-    <div class="line"></div>
-    <div class="line"></div>
-    <div class="line"></div>
+<div class="ui items">
+  <div class="item">
+    <div class="image">
+      <img src="{{ post.image }}">
+    </div>
+    <div class="content">
+      <a class="header">{{ post.city }}</a></br>
+      <a class="header">{{ post.title }}</a>
+      <div class="meta">
+        <span>{{ post.date_created}}</span>
+      </div>
+      <div class="description">
+        <p>{{ post.text }}</p>
+      </div>
+    </div>
   </div>
 </div>
-
-
-
-
-
-
 {% endblock %}
