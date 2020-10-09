@@ -1,7 +1,38 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<div class="ui grid container">
+    <div class="ui six wide column yellow">
+        <div class="ui center aligned cards vertical segments red">
+            <div class= "ui medium header segment">All Cities</div>
+            {% for town in towns %}
+                <a href="{% url 'city_show' town.id %}" class="ui card segment">
+                    <div class="content">
+                        <img src="{{town.image}}" alt="{{town.name}}" class="ui left floated small image">
+                        <h4 class="ui right floated">{{town.name}}</h4>
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
+    </div>
 
-{{city.name}}
+    <div class="ui ten wide column">
+        <div class="ui vertically divided sixteen wide column grid container">
+            <div class="ui right floated row"> 
+                <div class="ui large header">{{city.name}}</div>
+                <img src="{{city.image}}" alt="{{city.name}}" class="ui right floated medium image">
+            </div>
+            <div>
+                <div class="ui cards vertical segments green">
+                {% for post in posts %}
+                    <div class="ui card segment">
+                        {{ post.title }}
+                    </div>
+                {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 {% endblock content %}
