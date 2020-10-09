@@ -12,6 +12,7 @@ def signup(request):
     username_form = request.POST['username']
     email_form = request.POST['email']
     password = request.POST['password']
+    image = request.POST['image']
 
     if User.objects.filter(username=username_form).exists():
       context = {'error': 'Usernane is already taken'}
@@ -24,7 +25,8 @@ def signup(request):
         user = User.objects.create_user(
           username=username_form,
           email=email_form,
-          password=password)
+          password=password,
+          image = image)
         user.save() 
         profile = Profile(current_city=current_city, name=name, user=user)
         profile.save()

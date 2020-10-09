@@ -12,7 +12,7 @@ class Profile(models.Model):
   current_city = models.CharField(max_length=50)
   date_joined = models.DateField(auto_now=True)
   user = models.OneToOneField(User, on_delete=models.CASCADE)
-  image = CloudinaryField('image')
+  image = CloudinaryField('image', default="https://semantic-ui.com/images/avatar/small/steve.jpg" )
 
   def __str__(self): 
     return self.name
