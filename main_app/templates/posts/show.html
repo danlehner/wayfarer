@@ -1,26 +1,31 @@
 {% extends 'base.html' %}
 {% block content %}
 
+<div class="ui items container">
+  
+  <a href="{% url 'city_show' post.city.id %}" class="ui centered large image row">
+    <img class= "ui centered image" src="{{ post.city.image }}">
+    <div class="ui bottom attached label">{{post.city.name}}</div>
+  </a>
 
-<div class="ui items">
-  <div class="item">
-    <div class="image">
-      <img src="{{ post.image }}">
-    </div>
-    <div class="content">
-      <a class="header">{{ post.city }}</a></br>
-      <a class="header">{{ post.title }}</a>
-      <div class="meta">
+  <div class="content">
+    <div class="ui huge header">{{ post.title }}
+      <div class="ui sub header">
+        <span>By: {{ post.author}}</span>
+      </div>
+      <div class="ui sub header">
         <span>{{ post.date_created}}</span>
       </div>
-      <div class="description">
-        <p>{{ post.text }}</p>
-      </div>
+    </div>
+    <div class="description">
+      <p>{{ post.text }}</p>
+    </div>
+    <div class="ui buttons">
+      <button class="ui green button">Edit</button>
+      <div class="or"></div>
+      <button class="ui red button">Delete</button>
     </div>
   </div>
 </div>
-
-
-
 
 {% endblock %}

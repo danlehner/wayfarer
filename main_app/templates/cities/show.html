@@ -22,11 +22,13 @@
                 <div class="ui large header">{{city.name}}</div>
                 <img src="{{city.image}}" alt="{{city.name}}" class="ui right floated medium image">
             </div>
-            <div>
-                <div class="row">
-                    <span class="ui large header">Posts</span>
-                    <button class= "ui circular red big right floated button" id="add_post">+</button>
-                </div>
+
+            <div class="row">
+                <span class="ui large header">Posts</span>
+                <button class= "ui circular icon red button" id="add_post">
+                    <i class="plus icon"></i>
+                </button>
+            </div>
                 <div class="ui cards vertical segments green row">
                 {% for post in posts %}
                     <div class="ui card segment">
