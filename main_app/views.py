@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import City, Post, Profile
-from .forms import Profile_Form
+from .forms import Profile_Form, Post_Form
 
 # Create your views here.
 # ===== MAIN ===== #
@@ -15,7 +15,7 @@ def home(request):
 
 ## ===== CITY ===== #
 # city routes
-def city_show(request , city_id):
+def city_show(request, city_id):
   city = City.objects.get(id = city_id)
   towns = City.objects.all()
   posts = city.post_set.all()
