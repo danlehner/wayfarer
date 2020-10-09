@@ -40,7 +40,8 @@
           <a href="/logout/" class="ui primary button">logout</a>
         </div>
         <div class="item">
-          <a href="/user/edit/" class="ui primary button">Avatar</a>
+          <img href="/user/edit/" "ui avatar image" class="ui avatar image" src="https://semantic-ui.com/images/avatar/small/steve.jpg">
+            <span>{{ user }}</span> 
         </div>
       </div>
       {% else %}
@@ -49,7 +50,7 @@
           <a href="/login/" class="ui primary button">login</a>
         </div>
         <div class="item">
-          <a href="/signup" class="ui primary button">signup</a>
+          <a href="/signup/" class="ui primary button">signup</a>
         </div>
       </div>
       {% endif %}
