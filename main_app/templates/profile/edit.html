@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="ui celled grid container">
+  <div class="ui six wide column">
+    <img class="ui image circular small" src="https://semantic-ui.com/images/avatar/small/steve.jpg" alt="">
+    <form action="{% url 'profile_edit' profile.id %}" method="POST">
+      {% csrf_token %}
+      {{ profile_form.as_p }}
+      <a href="" type="submit" class="ui button green" id="btn">Submit</a>
+    </form>
+  </div>
+  <div class="ui six wide column">
+    <!-- <h2>{{ title}}'s Posts</h2>
+    {% for post in posts %}
+    <a href="/posts/{{ post.id }}"> 
+      <div class="ui card">
+        <h4 class="ui header">{{ post.title }} </h4>
+      </div>
+    </a>
+    {% endfor %}
+  </div> -->
+</div>
+{% endblock %}

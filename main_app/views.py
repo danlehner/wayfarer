@@ -51,6 +51,13 @@ def profile_show(request, profile_id):
 def profile_edit(request, profile_id): 
   profile = Profile.objects.get(id=profile_id)
   if request.method == 'POST': 
+    profile_form = Profile_Form(request.POST, instance=profile)
+    if profile_form.is_valid(): 
+      profile_form.save() 
+      return redirect('profile_show', profile_id=profile_id)
+  else: 
     profile_form = Profile_Form(instance=profile)
+  context = {'profile': profile, 'profile_form': profile_form, 'title': profile.name }
+  return render(request, 'profile/edit.html', context)
 
   
