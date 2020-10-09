@@ -36,7 +36,8 @@
 
 {% endblock %}
 
-<!-- <script>
+<script>
+
 $('.ui.form')
   .form({
     fields: {
@@ -48,7 +49,38 @@ $('.ui.form')
             prompt : 'Please enter your name'
           }
         ]
+      }, 
+      current_city: {
+        identifier: 'name', 
+        rules: [
+          {
+            type : 'empty', 
+            prompt : 'Please enter the city you live in'
+          }
+        ]
+      }, 
+      username: {
+        identifier: 'username',
+        rules: [
+          {
+            type   : 'empty',
+            prompt : 'Please enter a username'
+          }
+        ]
+      },
+      password: {
+        identifier: 'password',
+        rules: [
+          {
+            type   : 'empty',
+            prompt : 'Please enter a password'
+          },
+          {
+            type   : 'minLength[6]',
+            prompt : 'Your password must be at least {ruleValue} characters'
+          }
+        ]
       }
     }
   })
-</script> -->
+</script>
