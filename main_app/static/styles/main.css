@@ -13,16 +13,34 @@
 #body {
     background-color: var(--backgroundcolor);
 }
+
 #nav {
     background-color: var(--wayfarerYellow);
+    border-radius: 0px;
 }
+
 .ui.menu .item {
     color: black;
     font-weight: 900;
     font-size: 16px;
 }
 
+.footer {
+    background-color: var(--backgroundcolor);
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
 
+a:link {
+    color:var(--wayfarerGreen);
+}
+
+span:link {
+    color:var(--wayfarerGreen);
+}
 
 /* ----- BUTTONS -----*/
 .ui.button {
@@ -63,6 +81,7 @@
     font-weight: 900;
     line-height: 0.7em; 
 }
+
 .ui.green.button{
     background-color: var(--wayfarerGreen);
     color: black;
@@ -73,8 +92,14 @@
 
 
 
-/* ----- MAIN PAGE CARASOUEL -----*/
+/* ----- MAIN PAGE CAROUSEL-----*/
 #hero {
     max-height: 30%;
 }
 
+
+
+/* ----- MODAL -----*/
+.ui.modal {
+    background-color: var(--backgroundcolor);
+}
