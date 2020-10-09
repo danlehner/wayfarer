@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import City, Post, Profile
+from .forms import Profile_Form
 
 # Create your views here.
 # ===== MAIN ===== #
@@ -48,4 +49,8 @@ def profile_show(request, profile_id):
 
 
 def profile_edit(request, profile_id): 
-  pass
+  profile = Profile.objects.get(id=profile_id)
+  if request.method == 'POST': 
+    profile_form = Profile_Form(instance=profile)
+
+  
