@@ -28,7 +28,7 @@ def city_show(request , city_id):
 # post show
 def post_show(request, post_id):
   post = Post.objects.get(id = post_id)
-  context = {'post': post}
+  context = {'post': post, 'title': post.title}
   return render(request, 'posts/show.html', context)
 
 
