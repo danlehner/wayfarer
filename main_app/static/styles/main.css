@@ -1,3 +1,4 @@
+/* ----- BRAND COLORS -----*/
 :root {
     --backgroundcolor: #fffaf1ff;
     --wayfarerRed: #d92027ff;
@@ -8,18 +9,72 @@
 }
 
 
+/* ----- MAIN -----*/
 #body {
     background-color: var(--backgroundcolor);
 }
-
 #nav {
     background-color: var(--wayfarerYellow);
 }
-
-#btn .ui button {
-    background-color: var(--backgroundcolor)!important;
+.ui.menu .item {
+    color: black;
+    font-weight: 900;
+    font-size: 16px;
 }
 
+
+
+/* ----- BUTTONS -----*/
+.ui.button {
+    background-color: var(--backgroundcolor);
+    color: black;
+    font-weight: 900;
+    line-height: 0.7em; 
+}
+
+.ui.primary.button {
+    background-color: var(--backgroundcolor);
+    color: black;
+    font-weight: 900;
+    line-height: 0.7em; 
+}
+
+.ui.secondary.button {
+    background-color: var(--wayfarerGreen);
+}
+
+.ui.red.button {
+    background-color: var(--wayfarerRed);
+    color: black;
+    font-weight: 900;
+    line-height: 0.7em; 
+}
+
+.ui.orange.button {
+    background-color: var(--wayfarerOrange);
+    color: black;
+    font-weight: 900;
+    line-height: 0.7em; 
+}
+
+.ui.yellow.button{
+    background-color: var(--wayfarerYellow);
+    color: black;
+    font-weight: 900;
+    line-height: 0.7em; 
+}
+.ui.green.button{
+    background-color: var(--wayfarerGreen);
+    color: black;
+    font-weight: 900;
+    line-height: 0.7em; 
+}
+
+
+
+
+/* ----- MAIN PAGE CARASOUEL -----*/
 #hero {
     max-height: 30%;
 }
+
