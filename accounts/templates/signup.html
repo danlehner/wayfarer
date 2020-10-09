@@ -3,29 +3,36 @@
 
 <h1>Sign Up</h1>
 
-<form action="{% url 'signup' %}" method="POST">
-  {% csrf_token %}
-  <p>
-    <label for="name">Name</label>
-    <input type="text" name="name" maxlength="50" minlength="2" required>
-  </p>
-  <p>
-    <label for="current_city">Current City</label>
-    <input type="text" name="current_city" maxlength="50" minlength="2" required>
-  </p>
-  <p>
-    <label for="username">Username</label>
-    <input type="text" name="username" maxlength="25" minlength="2" required>
-  </p>
-  <p>
-    <label for="email">Email</label>
-    <input type="text" name="email" maxlength="25" minlength="2" required>
-  </p>
-  <p>
-    <label for="password">Password</label>
-    <input type="password" name="password" maxlength="50" minlength="4" required>
-  </p>
-  <button type="submit">Sign Up</button>
-</form>
+<div class="ui horizontal divider">
+  <form class="ui form segment" action="{% url 'signup' %}" method="POST">
+    {% csrf_token %}
+    <div class="two fields">
+      <p class="field">
+        <label for="name">Name</label>
+        <input type="text" name="name" maxlength="50" minlength="2" required>
+      </p>
+      <p class="field">
+        <label for="current_city">Current City</label>
+        <input type="text" name="current_city" maxlength="50" minlength="2" required>
+      </p>
+    </div>
+    <div class="three fields">
+      <p class="field">
+        <label for="username">Username</label>
+        <input type="text" name="username" maxlength="25" minlength="2" required>
+      </p>
+      <p class="field">
+        <label for="email">Email</label>
+        <input type="text" name="email" maxlength="25" minlength="2" required>
+      </p>
+      <p class="field">
+        <label for="password">Password</label>
+        <input type="password" name="password" maxlength="50" minlength="4" required>
+      </p>
+    </div>
+    <button type="submit">Sign Up</button>
+  </form>
+</div>
+
 
 {% endblock %}
