@@ -22,7 +22,8 @@ def city_show(request, city_id):
   city = City.objects.get(id = city_id)
   towns = City.objects.all()
   posts = city.post_set.all()
-  context = {'city': city, 'title': city.name, 'towns': towns, 'posts': posts}
+  post_form = Post_Form(request.POST)
+  context = {'city': city, 'title': city.name, 'towns': towns, 'posts': posts, 'post_form': post_form }
   return render(request, 'cities/show.html', context)
 
 
