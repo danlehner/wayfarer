@@ -14,3 +14,8 @@ $('#app_signup').on('click', function(){
     $('.signup.modal').modal('show');
 });
 
+$('#app_post_delete').on('click', function(){
+    console.log("click");
+    $('.small.modal').modal('show');
+});
+
