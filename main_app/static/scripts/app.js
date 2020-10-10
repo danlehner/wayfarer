@@ -1,16 +1,21 @@
 
-$('#add_post').on('click', function(){
+$('#app_post').on('click', function(){
     console.log("click");
-    $('.ui.modal').modal('show');
+    $('.ui.post.modal').modal('show');
 });
 
 $('#app_login').on('click', function(){
     console.log("click");
-    $('.ui.login.modal').modal('show');
+    $('.login.modal').modal('show');
 });
 
 $('#app_signup').on('click', function(){
     console.log("click");
     $('.signup.modal').modal('show');
+});
+
+$('#app_post_delete').on('click', function(){
+    console.log("click");
+    $('.small.modal').modal('show');
 });
 

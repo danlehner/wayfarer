@@ -11,6 +11,7 @@
   <!-- LINKS  -->
   <link rel="stylesheet" type="text/css" href="{% static '/styles/Semantic-UI-CSS-master/semantic.min.css' %}">
   <link rel="stylesheet" href='{% static "/styles/main.css" %}'>
+  
   <!-- SCRIPTS  -->
   <script defer
     src="https://code.jquery.com/jquery-3.1.1.min.js"
@@ -23,18 +24,22 @@
   <script defer 
     src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js">
   </script>
-  <script defer src='{% static "/scripts/app.js" %}'>
+  <script defer 
+    src='{% static "/scripts/app.js" %}'>
   </script>
 </head>
 <body id="body">
+  
+  
+  <!-- NAVBAR -->
   <nav class="ui borderless large menu" id="nav">
     <div class="vertically fitted item">
       <img src="/static/assets/wf_logo_yellow_sq.png">
     </div>
     <a href="/" class="item">wayfarer</a>
     {% if user.is_authenticated %}
-    <a href="/city/" class="item">city</a>
-    <a href="/post/" class="item">post</a>
+    <a href="/cities/2" class="item">city</a>
+    <a href="/posts/new" class="item">new post</a>
     <div class="right menu">
       <div class="item">
         <a href="{% url 'logout' %}" class="ui button" id="btn"> logout</a>
@@ -58,10 +63,15 @@
     {% endif %}
   </nav>
   
-  <main class="ui conatainer">
+
+  <!-- MAIN CONTENT -->
+  <main>
     {% block content %}
     {% endblock %}
   </main>
+  
+
+  <!-- MODALS FOR LOGIN & SIGNUP -->
   <section id="login_modal">
     <div class="ui login modal">
       <i class="close icon"></i>
@@ -130,6 +140,8 @@
     </div> 
   </section>
   
+
+  <!-- FOOTER -->
   <footer class="footer">
     <p> &copy; 2020 &nbsp Wayfarer &nbsp <a href="/about/team">Built by</a> </p>
   </footer>
