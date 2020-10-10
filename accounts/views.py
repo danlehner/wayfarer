@@ -12,7 +12,12 @@ def signup(request):
     username_form = request.POST['username']
     email_form = request.POST['email']
     password = request.POST['password']
+    image = request.POST['image']
 
+    if image:
+      image = image
+    else:
+      image = 'https://res.cloudinary.com/dvk80uh1a/image/upload/v1602285072/u9acqxd8itejhuqp0pai.jpg'
     if User.objects.filter(username=username_form).exists():
       context = {'error': 'Usernane is already taken'}
       return render(request, 'signup.html', context)
@@ -26,7 +31,7 @@ def signup(request):
           email=email_form,
           password=password)
         user.save() 
-        profile = Profile(current_city=current_city, name=name, user=user)
+        profile = Profile(current_city=current_city, name=name, user=user, image=image)
         profile.save()
         return redirect('/accounts/login')
   return render(request, 'signup.html')

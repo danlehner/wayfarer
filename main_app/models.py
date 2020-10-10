@@ -11,7 +11,7 @@ class Profile(models.Model):
   current_city = models.CharField(max_length=50)
   date_joined = models.DateField(auto_now=True)
   user = models.OneToOneField(User, on_delete=models.CASCADE)
-  image = models.URLField(default='https://res.cloudinary.com/dvk80uh1a/image/upload/v1602285072/u9acqxd8itejhuqp0pai.jpg')
+  image = models.URLField('link to a picture of you', default='https://res.cloudinary.com/dvk80uh1a/image/upload/v1602285072/u9acqxd8itejhuqp0pai.jpg')
 
   def __str__(self): 
     return self.name
