@@ -11,7 +11,7 @@
     <p>Joined Wayfarer on {{ profile.date_joined }}</p>
       <div class="two column row">
         <a href="/profile/{{profile.id}}/edit" class="ui button green" id="btn">Edit</a>
-        <button class="ui button orange" id="upload_widget">Upload a Picture</button>
+        <button class="ui button orange" id="upload_widget" value="{{profile.image}}">Upload a Picture</button>
         <a href="/profile/{{user.id}}/delete" class="ui button red" id="btn">Delete</a>
       </div>
   </div>

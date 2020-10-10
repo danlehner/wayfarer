@@ -1,9 +1,10 @@
 {% extends 'base.html' %}
+{% load cloudinary %}
 {% block content %}
 
 <div class="ui celled grid container">
   <div class="ui six wide column">
-    <img class="ui image circular small" src="https://semantic-ui.com/images/avatar/small/steve.jpg" alt="">
+    <div class="ui image small">{% cloudinary profile.image %}</div>
     <form action="{% url 'profile_edit' profile.id %}" method="POST">
       <h2>Edit {{ title }}</h2>
       {% csrf_token %}
