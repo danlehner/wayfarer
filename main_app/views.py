@@ -62,7 +62,8 @@ def post_edit(request, post_id):
 
 # post delete
 def post_delete(request, post_id):
-  pass
+  Post.objects.get(id=post_id).delete()
+  return redirect('profile_show', profile_id = request.user.profile.id)
 
 
 
