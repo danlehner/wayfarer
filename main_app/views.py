@@ -56,10 +56,7 @@ def post_delete(request, post_id):
 def profile_show(request, profile_id): 
   profile = Profile.objects.get(id=profile_id)
   posts = profile.post_set.all()
-  if profile.image == 'u9acqxd8itejhuqp0pai':
-    edit_image = f"{profile.id}_image" 
-    profile.image = edit_image
-    profile.save()
+  profile.change_image()
   context = {'profile': profile, 'title': profile.name, 'posts': posts}
   return render(request, 'profile/show.html', context)
 
