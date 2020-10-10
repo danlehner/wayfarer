@@ -14,11 +14,11 @@
       </div>
   </div>
   <div class="ui six wide column">
-    <h2>{{ title}}'s Posts</h2>
+    <h2>{{ title }}'s Posts</h2>
     {% for post in posts %}
     <a href="/posts/{{ post.id }}"> 
       <div class="ui card">
-        <h4 class="ui header">{{ post.title }} </h4>
+        <h4 class="ui header">{{ post.title }}, review of {{ post.city }} </h4>
       </div>
     </a>
     {% endfor %}

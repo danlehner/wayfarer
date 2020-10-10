@@ -89,6 +89,10 @@ span:link {
     line-height: 0.7em; 
 }
 
+.yellow{
+    background-color: var(--wayfarerYellow); 
+}
+
 
 
 
@@ -102,4 +106,25 @@ span:link {
 /* ----- MODAL -----*/
 .ui.modal {
     background-color: var(--backgroundcolor);
+}
+
+
+
+
+/* ----- CITIES PAGE -----*/
+/* .ui.container {
+    margin: 0;
+    width: 100%;
+} */
+
+#post_menu {
+    width: 100%;
+}
+.ui.floated.vertical.pointing.menu {
+    width: 100%;
+}
+
+
+#city_head {
+    height: 300px !important;
 }
