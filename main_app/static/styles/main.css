@@ -5,7 +5,6 @@
     --wayfarerYellow: #ffcd3cff;
     --wayfarerOrange: #ff9234ff;
     --wayfarerGreen: #35d0baff;
-
 }
 
 
@@ -35,6 +34,10 @@
 }
 
 a:link {
+    color:var(--wayfarerGreen);
+}
+
+span:link {
     color:var(--wayfarerGreen);
 }
 
