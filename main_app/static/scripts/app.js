@@ -14,14 +14,6 @@ $('#app_signup').on('click', function(){
     $('.signup.modal').modal('show');
 });
 
-// $(document).ready(function(){
-//     $('.carousel').slick({
-//     slidesToShow: 1,
-//     dots:false,
-//     centerMode: false,
-//     });
-//   });
-
 $('.carousel').slick({
     slidesToShow: 1,
     dots:false, 
