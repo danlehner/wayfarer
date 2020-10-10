@@ -42,7 +42,7 @@
         <a href="{% url 'logout' %}" class="ui button" id="btn"> logout</a>
       </div>
       <div class="item">
-        <div href="/user/edit/" class="ui avatar image">{% cloudinary user.profile.image %}</div>
+        <img href="/user/edit/" src="{{profile.image}}" alt="user image" class="ui avatar image">
           <a href="{% url 'profile_show' user.profile.id %}">
             <span>{{ user }}</span> 
           </a>
