@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import City, Post, Profile
 
-from .forms import Profile_Form
+from .forms import Profile_Form, Post_Form
 from django.contrib.auth.models import User
 
 
@@ -33,6 +33,18 @@ def post_show(request, post_id):
   context = {'post': post, 'title': post.title}
   return render(request, 'posts/show.html', context)
 
+# post new
+def post_new(request):
+  if request.method == 'POST':
+    post_form = Post_Form(request.POST)
+    if post_form.is_valid():
+      new_post = post_form.save(commit=False)
+      new_post.author = request.user.profile
+      new_post.save()
+      return redirect('profile_show', profile_id = request.user.profile.id)
+  else:
+    post_form = Post_Form()    
+  return render(request, 'posts/new.html', { 'post_form': post_form })
 
 # post edit
 def post_edit(request, post_id):
@@ -50,7 +62,11 @@ def post_edit(request, post_id):
 
 # post delete
 def post_delete(request, post_id):
-  pass
+  Post.objects.get(id=post_id).delete()
+  return redirect('profile_show', profile_id = request.user.profile.id)
+
+
+
 
 # ==== PROFILE ==== #
 def profile_show(request, profile_id): 
