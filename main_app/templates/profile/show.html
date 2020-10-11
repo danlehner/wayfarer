@@ -4,7 +4,7 @@
 
 <div class="ui celled grid container">
   <div class="ui six wide column">
-    <img class="ui image circular small" src="https://semantic-ui.com/images/avatar/small/steve.jpg" alt="">
+    <img class="ui image small" src="{{profile.image}}" alt="user image">
     <h2>{{ title }}</h2>
     <p>From {{ profile.current_city }}</p>
     <p>Joined Wayfarer on {{ profile.date_joined }}</p>
@@ -14,18 +14,15 @@
       </div>
   </div>
   <div class="ui six wide column">
-    <h2>{{ title}}'s Posts</h2>
+    <h2>{{ title }}'s Posts</h2>
     {% for post in posts %}
     <a href="/posts/{{ post.id }}"> 
       <div class="ui card">
-        <h4 class="ui header">{{ post.title }} </h4>
+        <h4 class="ui header">{{ post.title }}, review of {{ post.city }} </h4>
       </div>
     </a>
     {% endfor %}
   </div>
 </div>
-
-
-
 
 {% endblock %}

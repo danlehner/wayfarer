@@ -5,7 +5,7 @@ from .models import City, Profile, Post
 class Profile_Form(ModelForm):
   class Meta: 
     model = Profile
-    fields = ['name', 'current_city']
+    fields = ['name', 'current_city', 'image']
 
 class Post_Form(ModelForm):
   class Meta:
