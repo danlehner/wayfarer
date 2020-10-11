@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import City, Post, Profile
-
+from django.contrib.auth.decorators import login_required
 from .forms import Profile_Form, Post_Form
 from django.contrib.auth.models import User
 
@@ -18,6 +18,7 @@ def home(request):
 
 ## ===== CITY ===== #
 # city routes
+@login_required
 def city_show(request, city_id):
   city = City.objects.get(id = city_id)
   towns = City.objects.all()
@@ -29,12 +30,14 @@ def city_show(request, city_id):
 
 # ===== POSTS ===== #
 # post show
+@login_required
 def post_show(request, post_id):
   post = Post.objects.get(id = post_id)
   context = {'post': post, 'title': post.title}
   return render(request, 'posts/show.html', context)
 
 # post new
+@login_required
 def post_new(request):
   if request.method == 'POST':
     post_form = Post_Form(request.POST)
@@ -48,6 +51,7 @@ def post_new(request):
   return render(request, 'posts/new.html', { 'post_form': post_form })
 
 # post edit
+@login_required
 def post_edit(request, post_id):
   post = Post.objects.get(id = post_id)
   if request.method == 'POST':
@@ -62,6 +66,7 @@ def post_edit(request, post_id):
 
 
 # post delete
+@login_required
 def post_delete(request, post_id):
   Post.objects.get(id=post_id).delete()
   return redirect('profile_show', profile_id = request.user.profile.id)
@@ -70,13 +75,14 @@ def post_delete(request, post_id):
 
 
 # ==== PROFILE ==== #
+@login_required
 def profile_show(request, profile_id): 
   profile = Profile.objects.get(id=profile_id)
   posts = profile.post_set.all()
   context = {'profile': profile, 'title': profile.name, 'posts': posts}
   return render(request, 'profile/show.html', context)
 
-
+@login_required
 def profile_edit(request, profile_id): 
   profile = Profile.objects.get(id=profile_id)
   if request.method == 'POST': 
@@ -89,7 +95,7 @@ def profile_edit(request, profile_id):
   context = {'profile': profile, 'profile_form': profile_form, 'title': profile.name }
   return render(request, 'profile/edit.html', context)
 
-  
+@login_required  
 def profile_delete(request, user_id): 
   User.objects.get(id=user_id).delete() 
   return redirect("/")
