@@ -57,9 +57,12 @@ def post_new(request):
 def post_edit(request, post_id):
   post = Post.objects.get(id = post_id)
   if request.method == 'POST':
-    post_form = Post_Form(request.POST, instance=post)
-    if post_form.is_valid():
-      post_form.save()
+    if request.user.id == post.author.user.id:
+      post_form = Post_Form(request.POST, instance=post)
+      if post_form.is_valid():
+        post_form.save()
+        return redirect('post_show', post_id=post_id)
+    else: 
       return redirect('post_show', post_id=post_id)
   else:
     post_form = Post_Form(instance = post)
