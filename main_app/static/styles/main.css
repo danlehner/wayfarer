@@ -108,6 +108,45 @@ span:link {
     background-color: var(--backgroundcolor);
 }
 
+/* ----- SLICK SLIDER------ */
+
+.carousel-section {
+    position: relative;
+}
+
+.carousel {
+    margin: 50px;
+}
+
+.carousel div {
+    width: 90%; 
+    margin: 0 auto; 
+    height: auto;
+}
+
+.carousel img {
+    width: 100%;
+    height: 450px; 
+}
+
+.carousel-header {
+    position: absolute; 
+    max-width: 400px; 
+    text-align: center;
+    top: 40%; 
+    left: 38%; 
+    color: white; 
+    font-size: 60px; 
+    background-color: var(--wayfarerRed);
+    padding: 10px; 
+    z-index: 99;
+}
+
+.slick-prev:before, .slick-next:before { 
+    color:red !important; 
+    font-size: 40px !important; 
+}
+
 
 
 

@@ -14,6 +14,12 @@ $('#app_signup').on('click', function(){
     $('.signup.modal').modal('show');
 });
 
+$('.carousel').slick({
+    slidesToShow: 1,
+    dots:false, 
+    arrows: true, 
+    autoplay: true
+});
 $('#app_post_delete').on('click', function(){
     console.log("click");
     $('.small.modal').modal('show');

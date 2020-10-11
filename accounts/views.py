@@ -19,7 +19,7 @@ def signup(request):
     else:
       image = 'https://res.cloudinary.com/dvk80uh1a/image/upload/v1602285072/u9acqxd8itejhuqp0pai.jpg'
     if User.objects.filter(username=username_form).exists():
-      context = {'error': 'Usernane is already taken'}
+      context = {'error': 'Username is already taken'}
       return render(request, 'signup.html', context)
     else: 
       if User.objects.filter(email=email_form).exists(): 
