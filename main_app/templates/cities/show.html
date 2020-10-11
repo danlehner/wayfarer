@@ -4,16 +4,17 @@
 
 <div class="ui grid container">
     <!-- LEFT CITY CONTAINER -->
-    <div class="ui yellow five wide column stretched vertically">
+    <div class="ui yellow five wide column">
         <div class= "ui header">All Cities</div>        
-            <div class="ui floated vertical pointing menu">
-            {% for town in towns %}
-                <div class="item">
-                    <a href="{% url 'city_show' town.id %}" >{{town.name}}</a>
-                    <img src="{{town.image}}" alt="{{town.name}}" class="ui left floated mini image">
+        {% for town in towns %}
+        <a href="{% url 'city_show' town.id %}">
+            <div class="ui fluid vertical pointing menu">   
+                <div class="item" id="app_city_active">{{town.name}}
+                    <img src="{{town.image}}" alt="{{town.name}}" class="ui left floated mini image">  
                 </div>
-            {% endfor %}
-        </div>
+            </div>
+        </a>
+        {% endfor %}
     </div>
     <!-- RIGHT POST SHOW -->
     <div class="ui eleven wide column">
@@ -25,7 +26,7 @@
             <div class="row">
                 <div class="ui header">{{city.name}}: &nbsp Posts
                    &nbsp &nbsp 
-                   <a href="/posts/new"  id="app_post">
+                   <a href="/posts/new" id="app_post">
                         <i class="right floated red plus circle icon" ></i>
                    </a>
                 </div>
@@ -34,9 +35,9 @@
                 {% for post in posts %}
                     <div class="item">
                         <a href="/posts/{{ post.id }}" > 
-                        <h4 class="ui header">Title: {{ post.title }}</h4>
-                        <h5>{{ post.text }}</h5>
-                    </a>
+                            <h4 class="ui header">Title: {{ post.title }}</h4>
+                            <h5>{{ post.text }}</h5>
+                        </a>
                     </div>
                 {% endfor %}
                 </div>

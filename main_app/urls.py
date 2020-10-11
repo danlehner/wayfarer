@@ -10,7 +10,6 @@ urlpatterns = [
 
   # ===== POST ===== #
   path('posts/new/', views.post_new, name="post_new"),
-  # path('posts/<int:city_id>/new_from_city/', views.post_new_from_city, name="post_new_from_city"),
   path('posts/<int:post_id>/', views.post_show, name='post_show'),
   path('posts/<int:post_id>/edit/', views.post_edit, name='post_edit'),
   path('posts/<int:post_id>/delete/', views.post_delete, name='post_delete'),
