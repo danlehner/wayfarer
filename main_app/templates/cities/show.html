@@ -24,14 +24,17 @@
             </div>
             <div class="row">
                 <div class="ui header">{{city.name}}: &nbsp Posts
-                   &nbsp &nbsp <i class="right floated red plus circle icon" id="app_post"></i>
+                   &nbsp &nbsp 
+                   <a href="/posts/new"  id="app_post">
+                        <i class="right floated red plus circle icon" ></i>
+                   </a>
                 </div>
             </div>
                 <div class="ui vertical menu" id="post_menu">
                 {% for post in posts %}
                     <div class="item">
                         <a href="/posts/{{ post.id }}" > 
-                        <h4 class="ui header">Post title: {{ post.title }}</h4>
+                        <h4 class="ui header">Title: {{ post.title }}</h4>
                         <h5>{{ post.text }}</h5>
                     </a>
                     </div>

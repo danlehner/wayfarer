@@ -17,8 +17,10 @@
     <h2>{{ title }}'s Posts</h2>
     {% for post in posts %}
     <a href="/posts/{{ post.id }}"> 
-      <div class="ui card">
-        <h4 class="ui header">{{ post.title }}, review of {{ post.city }} </h4>
+      <div class="ui vertical menu" id="post_menu">
+        <div class="item">{{ post.title }}, review of {{ post.city }}
+          <img src="{{post.city.image}}" alt="{{post.city.name}}" class="ui right floated mini image">
+        </div>  
       </div>
     </a>
     {% endfor %}
