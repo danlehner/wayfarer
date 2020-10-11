@@ -73,7 +73,9 @@ def post_edit(request, post_id):
 # post delete
 @login_required
 def post_delete(request, post_id):
-  Post.objects.get(id=post_id).delete()
+  post = Post.objects.get(id=post_id)
+  if request.user.id == post.author.user.id:
+    post.delete()
   return redirect('profile_show', profile_id = request.user.profile.id)
 
 
