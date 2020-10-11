@@ -17,7 +17,8 @@ $('#app_signup').on('click', function(){
 $('.carousel').slick({
     slidesToShow: 1,
     dots:false, 
-    arrows: true
+    arrows: true, 
+    autoplay: true
 });
 $('#app_post_delete').on('click', function(){
     console.log("click");

@@ -133,8 +133,8 @@ span:link {
     position: absolute; 
     max-width: 400px; 
     text-align: center;
-    top: 30%; 
-    left: 32%; 
+    top: 40%; 
+    left: 38%; 
     color: white; 
     font-size: 60px; 
     background-color: var(--wayfarerRed);
