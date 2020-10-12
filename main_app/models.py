@@ -39,3 +39,16 @@ class Post(models.Model):
   class Meta: 
     ordering = ['-date_created']
 
+class Comment(models.Model): 
+  text = models.TextField()
+  date_commented = models.DateTimeField(auto_now=True)
+
+  commenter = models.ForeignKey(Profile, on_delete=models.CASCADE)
+  post = models.ForeignKey(Post, on_delete=models.CASCADE)
+
+  def __str__(self): 
+    return self.text
+
+  class Meta: 
+    ordering = ['-date_commented']
+

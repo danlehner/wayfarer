@@ -17,5 +17,9 @@ urlpatterns = [
   # ==== PROFILE ==== #
   path('profile/<int:profile_id>/', views.profile_show, name='profile_show'),
   path('profile/<int:profile_id>/edit', views.profile_edit, name='profile_edit'), 
-  path('profile/<int:user_id>/delete', views.profile_delete, name='profile_delete')
+  path('profile/<int:user_id>/delete', views.profile_delete, name='profile_delete'),
+
+  # ==== COMMENT ==== #
+  path('posts/<int:post_id>/add_comment', views.add_comment, name='add_comment'),
+  path('posts/<int:comment_id>/delete_comment', views.delete_comment, name='delete_comment')
 ]

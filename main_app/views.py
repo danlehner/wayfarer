@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
-from .models import City, Post, Profile
+from .models import City, Post, Profile, Comment
 from django.contrib.auth.decorators import login_required
-from .forms import Profile_Form, Post_Form
+from .forms import Profile_Form, Post_Form, Comment_Form
 from django.contrib.auth.models import User
 
 
@@ -33,7 +33,9 @@ def city_show(request, city_id):
 @login_required
 def post_show(request, post_id):
   post = Post.objects.get(id = post_id)
-  context = {'post': post, 'title': post.title}
+  comment_form = Comment_Form()
+  comments = post.comment_set.all()
+  context = {'post': post, 'title': post.title, 'comment_form': comment_form, 'comments': comments}
   return render(request, 'posts/show.html', context)
 
 
@@ -79,6 +81,25 @@ def post_delete(request, post_id):
     post.delete()
   return redirect('profile_show', profile_id = request.user.profile.id)
 
+# comment add 
+@login_required
+def add_comment(request, post_id): 
+  post = Post.objects.get(id=post_id)
+  comment_form = Comment_Form(request.POST)
+  if comment_form.is_valid(): 
+    new_comment = comment_form.save(commit=False)
+    new_comment.commenter = request.user.profile
+    new_comment.post = post
+    new_comment.save()
+  return redirect('post_show', post_id=post_id)
+
+# comment delete
+@login_required
+def delete_comment(request, comment_id): 
+  comment = Comment.objects.get(id=comment_id)
+  if request.user.id == comment.commenter.user.id:
+    comment.delete()
+  return redirect('post_show', post_id=comment.post.id)
 
 
 

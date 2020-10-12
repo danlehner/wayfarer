@@ -14,6 +14,11 @@ $('#app_signup').on('click', function(){
     $('.signup.modal').modal('show');
 });
 
+$('#app_comment').on('click', function(){
+    console.log("comment click"); 
+    $('.comment.modal').modal('show'); 
+}); 
+
 $('.carousel').slick({
     slidesToShow: 1,
     dots:false, 
