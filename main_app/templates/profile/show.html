@@ -20,14 +20,29 @@
     <h2>{{ title }}'s Posts</h2>
     {% for post in posts %}
     <a href="/posts/{{ post.id }}"> 
-      <div class="ui fluid vertical menu">
-        <div class="item">{{ post.title }}, review of {{ post.city }}
-          <img src="{{post.city.image}}" alt="{{post.city.name}}" class="ui right floated mini image">
-        </div>  
+      <div class="ui relaxed link items"> 
+        <div class="item">
+          <a href="/posts/{{ post.id }}" class="ui tiny image">
+            <img src="{{post.city.image}}" alt="{{post.city.name}}">
+          </a>
+          <div class="middle aligned content">
+            <a href="/posts/{{ post.id }}" class="header">{{ post.city }}</a>
+            <div class="description">
+              <p>{{ post.title }}</p>
+            </div>
+          </div>
       </div>
-    </a>
+    </a> 
     {% endfor %}
   </div>
 </div>
 
 {% endblock %}
+
+<!-- <a href="/posts/{{ post.id }}"> 
+  <div class="ui fluid vertical menu">
+    <div class="vertically fitted item">{{ post.city }}
+      <img src="{{post.city.image}}" alt="{{post.city.name}}" class="ui right floated small image">
+    </div>  
+  </div>
+-->

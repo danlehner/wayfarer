@@ -166,3 +166,12 @@ span:link {
 #city_head {
     height: 300px !important;
 }
+
+#edit_buttons{
+    position:absolute;
+    bottom: 100px; 
+}
+.red.plus.circle.icon{
+    position:absolute;
+    right: 10px;
+}

@@ -8,7 +8,7 @@
 <form action="{% url 'post_edit' post.id %}" method="POST">
     {% csrf_token %}
     {{ post_form.as_p}}
-    <input type="submit" class="button" value="Update {{post.city}} post!">
+    <input type="submit" class="ui green button" value="Update {{post.city}} post!">
 </form>
 
 {% endblock %}
