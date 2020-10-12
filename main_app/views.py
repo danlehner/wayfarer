@@ -92,10 +92,13 @@ def profile_show(request, profile_id):
 @login_required
 def profile_edit(request, profile_id): 
   profile = Profile.objects.get(id=profile_id)
-  if request.method == 'POST': 
-    profile_form = Profile_Form(request.POST, instance=profile)
-    if profile_form.is_valid(): 
-      profile_form.save() 
+  if request.method == 'POST':
+    if request.user.id == profile.user.id: 
+      profile_form = Profile_Form(request.POST, instance=profile)
+      if profile_form.is_valid(): 
+        profile_form.save() 
+        return redirect('profile_show', profile_id=profile_id)
+    else:
       return redirect('profile_show', profile_id=profile_id)
   else: 
     profile_form = Profile_Form(instance=profile)
