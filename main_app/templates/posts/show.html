@@ -2,31 +2,41 @@
 {% block content %}
 
 <div class="ui items container">
-  
+  <!-- MAIN IMAGE -->
   <a href="{% url 'city_show' post.city.id %}" class="ui centered large image row">
     <img class= "ui centered image" src="{{ post.city.image }}">
     <div class="ui bottom attached label">{{post.city.name}}</div>
   </a>
+  <div class="ui hidden divider"></div>
 
+
+  <!-- CONTENT -->
   <div class="content">
     <div class="ui huge header">{{ post.title }}
       <div class="ui sub header">
-        <span>By: {{ post.author}}</span>
+          <img  src="{{user.profile.image}}" alt="user image" class="ui avatar image">
+          <a href="{% url 'profile_show' user.profile.id %}">
+            <span>{{ user }}</span> 
+          </a>
       </div>
       <div class="ui sub header">
-        <span>{{ post.date_created}}</span>
+        <span>{{ post.date_created }}</span>
       </div>
     </div>
+    <div class="ui divider"></div>
     <div class="description">
       <p>{{ post.text }}</p>
     </div>
-    <div class="ui large buttons">
+    <div class="ui hidden divider"></div>
+
+    <!-- BUTTONS -->
+    <div class="ui buttons">
       <a href="{% url 'post_edit' post.id %}"><button class="ui green button">Edit</button></a>
       <div class="or"></div>
       <a> <button class="ui red button" id="app_post_delete">Delete</button></a>
     </div>
     
-    
+    <!-- MODALS -->
     <div class="ui small modal">
       <i class="close icon"></i>
       <div class="header">

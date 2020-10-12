@@ -167,3 +167,7 @@ span:link {
     height: 300px !important;
 }
 
+#edit_buttons{
+    position:absolute;
+    bottom: 100px; 
+}
