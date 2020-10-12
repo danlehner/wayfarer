@@ -46,6 +46,9 @@ class Comment(models.Model):
   commenter = models.ForeignKey(Profile, on_delete=models.CASCADE)
   post = models.ForeignKey(Post, on_delete=models.CASCADE)
 
+  def __str__(self): 
+    return self.text
+
   class Meta: 
-    ordering = ['-date_created']
+    ordering = ['-date_commented']
 

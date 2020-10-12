@@ -30,13 +30,15 @@
     <div class="ui hidden divider"></div>
     
     <!-- BUTTONS -->
-    {% if  request.user.id == post.author.id %}
-      <div class="ui buttons">
+    <div class="ui buttons">
+        <a id="app_comment"><button class="ui yellow button">Comment</button></a>
+      {% if request.user.id == post.author.id %}
+        <div class="or"></div>
         <a href="{% url 'post_edit' post.id %}"><button class="ui green button">Edit</button></a>
         <div class="or"></div>
         <a> <button class="ui red button" id="app_post_delete">Delete</button></a>
+      {% endif %}
       </div>
-    {% endif %}
     
     <!-- MODALS -->
     <div class="ui small modal">
@@ -57,6 +59,26 @@
 
 
   </div>
+</div>
+
+<div>
+  {% for comment in comments %}
+      <div class=" ui item">
+              <h5>{{ comment.text }}</h5>
+      </div>
+  {% endfor %}
+</div>
+
+<div class="ui comment modal">
+  <i class="close icon"></i>
+  <div class="header">Add Comment</div>
+  <div class="content">
+      <form class="ui form" action= "{% url 'add_comment' post.id %}" method="POST">
+          {% csrf_token %}
+          {{ comment_form.as_p}}
+          <input type="submit" class="ui yellow button" value="Add New Comment">
+      </form>
+  </div> 
 </div>
 
 {% endblock %}
