@@ -63,7 +63,7 @@
 
 <div>
   <div class="ui comments">
-    <h3 class="ui dividing header">Comments</h3>
+    <h3 class="ui dividing header">{{ comments_length }} Comment{% if comments_length != 1 %}s{% endif %}</h3>
     {% for comment in comments %}
       <div class="comment">
         <a href="{% url 'profile_show' comment.commenter.id %}" class="ui avatar image">
