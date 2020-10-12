@@ -25,8 +25,9 @@
             </div>
             <div class="row">
                 <div class="ui header">{{city.name}}: &nbsp Posts
-                   &nbsp &nbsp 
-                   <a href="/posts/new" id="app_post">
+                   &nbsp &nbsp
+                        <!--href="/posts/new"--> 
+                   <a  id="app_post">
                         <i class="right floated red plus circle icon" ></i>
                    </a>
                 </div>
@@ -51,7 +52,7 @@
     <i class="close icon"></i>
     <div class="header">Add Post</div>
     <div class="content">
-        <form action= "{% url 'post_new' %}" method="POST">
+        <form class="ui form" action= "{% url 'post_new' %}" method="POST">
             {% csrf_token %}
             {{ post_form.as_p}}
             <input type="submit" class="ui green button" value="new post">

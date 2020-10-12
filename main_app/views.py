@@ -44,8 +44,9 @@ def post_new(request):
       new_post.save()
       return redirect('profile_show', profile_id = request.user.profile.id)
   else:
-    post_form = Post_Form()    
-  return render(request, 'posts/new.html', { 'post_form': post_form })
+    post_form = Post_Form()
+  context =  { 'post_form': post_form }   
+  return render(request, 'posts/new.html', context )
 
 
 # post edit
