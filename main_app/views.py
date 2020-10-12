@@ -35,7 +35,8 @@ def post_show(request, post_id):
   post = Post.objects.get(id = post_id)
   comment_form = Comment_Form()
   comments = post.comment_set.all()
-  context = {'post': post, 'title': post.title, 'comment_form': comment_form, 'comments': comments}
+  comments_length = len(comments)
+  context = {'post': post, 'title': post.title, 'comment_form': comment_form, 'comments': comments, 'comments_length': comments_length}
   return render(request, 'posts/show.html', context)
 
 
