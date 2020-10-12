@@ -93,6 +93,15 @@ def add_comment(request, post_id):
     new_comment.save()
   return redirect('post_show', post_id=post_id)
 
+# comment delete
+@login_required
+def delete_comment(request, comment_id): 
+  comment = Comment.objects.get(id=comment_id)
+  if request.user.id == comment.commenter.user.id:
+    comment.delete()
+  return redirect('post_show', post_id=comment.post.id)
+
+
 
 # ==== PROFILE ==== #
 @login_required

@@ -62,11 +62,30 @@
 </div>
 
 <div>
-  {% for comment in comments %}
-      <div class=" ui item">
-              <h5>{{ comment.text }}</h5>
+  <div class="ui comments">
+    <h3 class="ui dividing header">Comments</h3>
+    {% for comment in comments %}
+      <div class="comment">
+        <a href="{% url 'profile_show' comment.commenter.id %}" class="ui avatar image">
+          <img src="{{ comment.commenter.image }}" alt="">
+        </a>
+        <div class="content">
+          <a href="{% url 'profile_show' comment.commenter.id %}" class="author">{{ comment.commenter.name }}</a>
+        </div>
+        <div class="metadata">
+          <span class="date">{{ comment.date_commented }}</span>
+        </div>
+        <div class="text">
+          {{ comment.text }}
+        </div>
+        {% if request.user.id == comment.commenter.id %}
+          <div class="actions">
+            <a style="color: red;" href="{% url 'delete_comment' comment.id %}">Delete</a>
+          </div>
+        {% endif %}
       </div>
-  {% endfor %}
+    {% endfor %}
+  </div>
 </div>
 
 <div class="ui comment modal">
