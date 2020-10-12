@@ -107,6 +107,8 @@ def profile_edit(request, profile_id):
 
 @login_required  
 def profile_delete(request, user_id): 
-  User.objects.get(id=user_id).delete() 
+  user = User.objects.get(id=user_id)
+  if request.user.id == user.id:
+    user.delete() 
   return redirect("/")
 
