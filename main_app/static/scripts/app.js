@@ -34,7 +34,7 @@ $('#app_post_delete').on('click', function(){
 // });
 
 
-//  from semantic ui docs
+// from semantic ui docs
 // $(document).ready(function() {
 //   $('.ui.menu .ui.dropdown').dropdown({
 //     on: 'hover'
@@ -45,6 +45,7 @@ $('#app_post_delete').on('click', function(){
 //         .siblings()
 //         .removeClass('active');
 //     });
+//     console.log('I am menu clicked semantic UI') 
 // });
 
 $(document).ready(function(){

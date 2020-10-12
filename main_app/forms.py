@@ -11,3 +11,8 @@ class Post_Form(ModelForm):
   class Meta:
     model = Post
     fields = ['title', 'text', 'city']
+
+class Post_Form_Modal(ModelForm):
+  class Meta:
+    model = Post
+    fields = ['title', 'text']
