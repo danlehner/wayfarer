@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import City, Post, Profile
-
+from django.contrib.auth.decorators import login_required
 from .forms import Profile_Form, Post_Form
 from django.contrib.auth.models import User
 
@@ -18,6 +18,7 @@ def home(request):
 
 ## ===== CITY ===== #
 # city routes
+@login_required
 def city_show(request, city_id):
   city = City.objects.get(id = city_id)
   towns = City.objects.all()
@@ -29,12 +30,15 @@ def city_show(request, city_id):
 
 # ===== POSTS ===== #
 # post show
+@login_required
 def post_show(request, post_id):
   post = Post.objects.get(id = post_id)
   context = {'post': post, 'title': post.title}
   return render(request, 'posts/show.html', context)
 
+
 # post new from main page
+@login_required
 def post_new(request):
   if request.method == 'POST':
     post_form = Post_Form(request.POST)
@@ -49,12 +53,16 @@ def post_new(request):
 
 
 # post edit
+@login_required
 def post_edit(request, post_id):
   post = Post.objects.get(id = post_id)
   if request.method == 'POST':
-    post_form = Post_Form(request.POST, instance=post)
-    if post_form.is_valid():
-      post_form.save()
+    if request.user.id == post.author.user.id:
+      post_form = Post_Form(request.POST, instance=post)
+      if post_form.is_valid():
+        post_form.save()
+        return redirect('post_show', post_id=post_id)
+    else: 
       return redirect('post_show', post_id=post_id)
   else:
     post_form = Post_Form(instance = post)
@@ -63,35 +71,44 @@ def post_edit(request, post_id):
 
 
 # post delete
+@login_required
 def post_delete(request, post_id):
-  Post.objects.get(id=post_id).delete()
+  post = Post.objects.get(id=post_id)
+  if request.user.id == post.author.user.id:
+    post.delete()
   return redirect('profile_show', profile_id = request.user.profile.id)
 
 
 
 
 # ==== PROFILE ==== #
+@login_required
 def profile_show(request, profile_id): 
   profile = Profile.objects.get(id=profile_id)
   posts = profile.post_set.all()
   context = {'profile': profile, 'title': profile.name, 'posts': posts}
   return render(request, 'profile/show.html', context)
 
-
+@login_required
 def profile_edit(request, profile_id): 
   profile = Profile.objects.get(id=profile_id)
-  if request.method == 'POST': 
-    profile_form = Profile_Form(request.POST, instance=profile)
-    if profile_form.is_valid(): 
-      profile_form.save() 
+  if request.method == 'POST':
+    if request.user.id == profile.user.id: 
+      profile_form = Profile_Form(request.POST, instance=profile)
+      if profile_form.is_valid(): 
+        profile_form.save() 
+        return redirect('profile_show', profile_id=profile_id)
+    else:
       return redirect('profile_show', profile_id=profile_id)
   else: 
     profile_form = Profile_Form(instance=profile)
   context = {'profile': profile, 'profile_form': profile_form, 'title': profile.name }
   return render(request, 'profile/edit.html', context)
 
-  
+@login_required  
 def profile_delete(request, user_id): 
-  User.objects.get(id=user_id).delete() 
+  user = User.objects.get(id=user_id)
+  if request.user.id == user.id:
+    user.delete() 
   return redirect("/")
 
