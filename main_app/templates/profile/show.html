@@ -8,10 +8,13 @@
     <h2>{{ title }}</h2>
     <p>From {{ profile.current_city }}</p>
     <p>Joined Wayfarer on {{ profile.date_joined }}</p>
-      <div class="two column row">
-        <a href="/profile/{{profile.id}}/edit" class="ui button green" id="btn">Edit</a>
-        <a href="/profile/{{profile.user.id}}/delete" class="ui button red" id="btn">Delete</a>
-      </div>
+      {% if request.user.id == profile.user.id %}
+        <div class="ui large buttons">
+          <a href="/profile/{{profile.id}}/edit" id="btn"><button class="ui green button">Edit</button></a>
+          <div class="or"></div>
+          <a href="/profile/{{profile.user.id}}/delete" id="btn"><button class="ui red button">Delete</button></a>
+        </div>
+      {% endif %}
   </div>
   <div class="ui six wide column">
     <h2>{{ title }}'s Posts</h2>

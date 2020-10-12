@@ -20,11 +20,13 @@
     <div class="description">
       <p>{{ post.text }}</p>
     </div>
-    <div class="ui large buttons">
-      <a href="{% url 'post_edit' post.id %}"><button class="ui green button">Edit</button></a>
-      <div class="or"></div>
-      <a> <button class="ui red button" id="app_post_delete">Delete</button></a>
-    </div>
+    {% if  request.user.id == post.author.id %}
+      <div class="ui large buttons">
+        <a href="{% url 'post_edit' post.id %}"><button class="ui green button">Edit</button></a>
+        <div class="or"></div>
+        <a> <button class="ui red button" id="app_post_delete">Delete</button></a>
+      </div>
+    {% endif %}
     
     
     <div class="ui small modal">
