@@ -114,6 +114,29 @@ span:link {
     position: relative;
 }
 
+.carousel-section-mobile {
+    display: none; 
+    margin: 20px auto; 
+    text-align: center;
+    position: relative; 
+    max-width: 50%; 
+}
+
+.carousel-section-mobile img {
+    width: 100%; 
+}
+
+@media screen and (max-width: 767px) {
+    .carousel-section {
+        display: none; 
+    }
+
+    .carousel-section-mobile {
+        display: block; 
+    }
+}
+
+
 .carousel {
     margin: 50px;
 }
@@ -129,17 +152,28 @@ span:link {
     height: 450px; 
 }
 
+.carousel-header, 
+.carousel-header-mobile {
+    background-color: var(--wayfarerRed);
+    color: white; 
+    padding: 10px; 
+}
+
 .carousel-header {
     position: absolute; 
     max-width: 400px; 
     text-align: center;
     top: 40%; 
-    left: 38%; 
-    color: white; 
+    left: 35%; 
     font-size: 60px; 
-    background-color: var(--wayfarerRed);
-    padding: 10px; 
     z-index: 99;
+}
+
+.carousel-header-mobile {
+    font-size: .7em; 
+    position: absolute; 
+    top: 40%; 
+    left: 30%; 
 }
 
 .slick-prev:before, .slick-next:before { 

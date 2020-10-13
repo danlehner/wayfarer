@@ -19,6 +19,18 @@ $('#app_comment').on('click', function(){
     $('.comment.modal').modal('show'); 
 }); 
 
+$('.app_comment_edit').on('click', function(){
+   const elm = $(this).parent().parent().children()[0]
+   fetch(`/posts/${this.id}/edit_comment`)
+   .then(function(response){
+       return response.json()
+   })
+   .then(function(json){
+       const comment = json[0].fields
+       $(elm).html(`<textarea>${comment.text}</textarea>`)
+   })
+})
+
 $('.carousel').slick({
     slidesToShow: 1,
     dots:false, 
