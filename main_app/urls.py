@@ -24,5 +24,9 @@ urlpatterns = [
 
   # ==== COMMENT ==== #
   path('posts/<int:post_id>/add_comment', views.add_comment, name='add_comment'),
-  path('posts/<int:comment_id>/delete_comment', views.delete_comment, name='delete_comment')
+  path('posts/<int:comment_id>/delete_comment', views.delete_comment, name='delete_comment'),
+
+  # ==== TEAM ABOUT PAGE ==== #
+  path('team', views.our_team, name='team'),
+  
 ]

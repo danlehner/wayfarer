@@ -6,6 +6,12 @@ from django.contrib.auth.models import User
 
 
 # Create your views here.
+
+# ==== ABOUT TEAM ==== #
+def our_team(request):
+  return render(request, 'about/team.html')
+
+
 # ===== MAIN ===== #
 def home(request): 
   context = {'title': 'Wayfarer'}
@@ -39,7 +45,8 @@ def post_show(request, post_id):
   post = Post.objects.get(id = post_id)
   comment_form = Comment_Form()
   comments = post.comment_set.all()
-  context = {'post': post, 'title': post.title, 'comment_form': comment_form, 'comments': comments}
+  comments_length = len(comments)
+  context = {'post': post, 'title': post.title, 'comment_form': comment_form, 'comments': comments, 'comments_length': comments_length}
   return render(request, 'posts/show.html', context)
 
 
@@ -137,4 +144,8 @@ def profile_delete(request, user_id):
   if request.user.id == user.id:
     user.delete() 
   return redirect("/")
+
+
+
+
 

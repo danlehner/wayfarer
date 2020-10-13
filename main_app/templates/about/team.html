@@ -1,0 +1,73 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Team</title>
+  
+  <!-- LINKS  -->
+  <link rel="stylesheet" type="text/css" href="{% static '/styles/Semantic-UI-CSS-master/semantic.min.css' %}">
+  <link rel="stylesheet" href='{% static "/styles/main.css" %}'>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+  <!-- SCRIPTS  -->
+  <script defer
+    src="https://code.jquery.com/jquery-3.1.1.min.js"
+    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+    crossorigin="anonymous">
+  </script>
+  <script defer 
+    src="{% static '/styles/Semantic-UI-CSS-master/semantic.min.js' %}">
+  </script>
+  <script defer 
+    src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js">
+  </script>
+  <script defer 
+    src='{% static "/scripts/app.js" %}'>
+  </script>
+  </head>
+<body id="body">
+  <!-- NAVBAR -->
+  <nav class="ui borderless large menu" id="team_nav">
+    <div class="vertically fitted item">
+      <img src="/static/assets/wf_logo_yellow_sq.png">
+    </div>
+    <a href="/" class="item">wayfarer</a>
+  </nav>
+  <main class="ui container main">
+        <div class="ui three column center aligned grid">
+        <div class="column">
+            <img id="profile_pic" class="ui centered small image" src="">
+            <div class="ui hidden divider"></div>
+            <p>Dan Leher</p>
+            <a href="https://semantic-ui.com/elements/button.html">
+                <button class="ui linkedin tiny button"><i class="linkedin icon"></i>LinkedIn</button>
+            </a>
+        </div>
+        <div class="column">
+            <img id="profile_pic" class="ui centered small image" src="">
+            <div class="ui hidden divider"></div>
+            <p>Jeff Thompson</p>
+            <a href="https://semantic-ui.com/elements/button.html">
+                <button class="ui linkedin tiny button"><i class="linkedin icon"></i>LinkedIn</button>
+            </a>
+        </div>
+        <div class="column">
+            <img id="profile_pic" class="ui centered small image" src="https://i.imgur.com/CkaV3Gq.png">
+            <div class="ui hidden divider"></div>
+            <p>Jason Andersen</p>
+            <a href="https://www.linkedin.com/in/jason--andersen/">
+                <button class="ui linkedin tiny button"><i class="linkedin icon"></i>LinkedIn</button>
+            </a>
+        </div>
+        </div>
+  </main>
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p> &copy; 2020 &nbsp Wayfarer &nbsp <a href="/team">Built by</a> </p>
+  </footer>
+</body>
+</html>
