@@ -1,0 +1,27 @@
+/*******************************
+         Site Settings
+*******************************/
+
+@themesFolder: 'themes';
+@pageBackground: #f9f9f9;
+
+
+/*-------------------
+       Fonts
+--------------------*/
+
+@fontName: 'Lato';
+@fontSmoothing: antialiased;
+@importGoogleFonts: true;
+
+/*-------------------
+    wayfarer colors
+--------------------*/
+
+@primaryColor: @orange:
+@secondaryColor: @red;
+@pageBackground: @red;
+        
+
+/*--- colors ---*/
+@orange: #ffcd3cff;

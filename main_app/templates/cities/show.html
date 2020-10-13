@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="ui grid container">
+    <!-- LEFT CITY CONTAINER -->
+    <div class="ui yellow five wide column">
+        <div class= "ui header">All Cities</div>        
+        {% for town in towns %}
+        <!-- <div class="ui fluid vertical pointing menu">
+            <a  class="item">
+                {{town.name}}
+                <img href="{% url 'city_show' town.id %}" src="{{town.image}}" alt="{{town.name}}" class="ui left floated mini image"> 
+            </a>
+          </div> -->
+        
+        <a href="{% url 'city_show' town.id %}">
+            <div class="ui fluid vertical pointing menu">   
+                <div class="ui item">{{town.name}}
+                    <img src="{{town.image}}" alt="{{town.name}}" class="ui left floated mini image">  
+                </div>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+    
+    <!-- RIGHT POST SHOW -->
+    <div class="ui eleven wide column">
+        <div class="ui vertically divided relaxed grid container">
+            <!-- CITY IMAGE & INFO -->
+            <div class="ui right floated row"> 
+                <div class="ui header" id="city_head"></div>
+                <img src="{{city.image}}" alt="{{city.name}}" class="ui medium image">
+            </div>
+            <div class="row">
+                <div class="ui header">{{city.name}}: &nbsp Posts
+                   <a id="app_post">
+                        <i class="red plus large circle icon" ></i>
+                   </a>
+                </div>
+            </div>
+                <div class="ui vertical menu" id="post_menu">
+                {% for post in posts %}
+                    <div>
+                        <a href="/posts/{{ post.id }}" > 
+                            <div class="ui left floated">
+                                <div class="ui red ribbon label">
+                                    <i class="pencil alternate icon"></i> {{ post.author.name }}
+                                </div>
+                                <img src="{{ post.author.image }}" alt="" class="ui small image">
+                            </div>
+                            <div class="ui floated right">
+                                <h4 class="ui header">Title: {{ post.title }}</h4>
+                                <h5>{{ post.text }}</h5>
+                            </div>
+                        </a>
+                    </div>
+                {% endfor %}
+                </div>
+        </div>
+    </div>
+</div>
+<div class="ui hidden divider"></div>
+<div class="ui hidden divider"></div>
+<div class="ui hidden divider"></div>
+
+
+<!-- ADD POST MODALS -->
+<div class="ui post modal">
+    <i class="close icon"></i>
+    <div class="header">Add Post</div>
+    <div class="content">
+        <form class="ui form" action= "{% url 'post_new' %}" method="POST">
+            {% csrf_token %}
+            {{ post_form.as_p}}
+            <input type="submit" class="ui green button" value="new post">
+        </form>
+    </div> 
+</div>
+{% endblock content %}

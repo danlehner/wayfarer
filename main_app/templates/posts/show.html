@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="ui items container">
+  <!-- MAIN IMAGE -->
+  <a href="{% url 'city_show' post.city.id %}" class="ui centered large image row">
+    <img class= "ui centered image" src="{{ post.city.image }}">
+    <div class="ui bottom attached label">{{post.city.name}}</div>
+  </a>
+  <div class="ui hidden divider"></div>
+
+
+  <!-- CONTENT -->
+  <div class="content">
+    <div class="ui huge header">{{ post.title }}
+      <div class="ui sub header">
+          <img  src="{{post.author.image}}" alt="user image" class="ui avatar image">
+          <a href="{% url 'profile_show' post.author.id %}">
+            <span>{{ post.author }}</span> 
+          </a>
+      </div>
+      <div class="ui sub header">
+        <span>{{ post.date_created }}</span>
+      </div>
+    </div>
+    <div class="ui divider"></div>
+    <div class="description">
+      <p>{{ post.text }}</p>
+    </div>
+    <div class="ui hidden divider"></div>
+    
+    <!-- BUTTONS -->
+    <div class="ui buttons">
+        <a id="app_comment"><button class="ui yellow button">Comment</button></a>
+      {% if request.user.id == post.author.id %}
+        <div class="or"></div>
+        <a href="{% url 'post_edit' post.id %}"><button class="ui green button">Edit</button></a>
+        <div class="or"></div>
+        <a> <button class="ui red button" id="app_post_delete">Delete</button></a>
+      {% endif %}
+      </div>
+    
+    <!-- MODALS -->
+    <div class="ui small modal">
+      <i class="close icon"></i>
+      <div class="header">
+        Delete
+      </div>
+      <div class="image content">
+        <div class="description">
+          <div class="ui header">"Are you sure you want to delete '{{ post.title }}' post?"</div>
+        </div>
+      </div>
+      <div class="actions">
+        <button class="ui green deny button">cancel</button>
+        <a href="{% url 'post_delete' post.id %}"><button class="ui red button">delete</button></a>
+    </div>
+</div>
+
+
+  </div>
+</div>
+
+<div>
+  <div class="ui comments">
+    <h3 class="ui dividing header">{{ comments_length }} Comment{% if comments_length != 1 %}s{% endif %}</h3>
+    {% for comment in comments %}
+      <div class="comment">
+        <a href="{% url 'profile_show' comment.commenter.id %}" class="ui avatar image">
+          <img src="{{ comment.commenter.image }}" alt="">
+        </a>
+        <div class="content">
+          <a href="{% url 'profile_show' comment.commenter.id %}" class="author">{{ comment.commenter.name }}</a>
+        </div>
+        <div class="metadata">
+          <span class="date">{{ comment.date_commented }}</span>
+        </div>
+        <div class="text comment-text">
+          <p id="text-{{ comment.id }}">{{ comment.text }}</p>
+          <p class="ui button green tiny submit-edit" id="{{ comment.id }}">Submit edit</p>
+          {% if request.user.id == comment.commenter.id %}
+          <div class="actions">
+            <a class="ui blue app_comment_edit" id="{{ comment.id }}">Edit</a>
+            <a style="color: red;" href="{% url 'delete_comment' comment.id %}">Delete</a>
+          </div>
+        {% endif %}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+  <div class="ui hidden divider"></div>
+</div>
+
+<div class="ui comment modal">
+  <i class="close icon"></i>
+  <div class="header">Add Comment</div>
+  <div class="content">
+      <form class="ui form" action= "{% url 'add_comment' post.id %}" method="POST">
+          {% csrf_token %}
+          {{ comment_form.as_p}}
+          <input type="submit" class="ui yellow button" value="Add New Comment">
+      </form>
+  </div>
+</div>
+
+{% endblock %}

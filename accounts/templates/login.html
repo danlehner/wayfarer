@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+<section style="width: 50%;
+margin: 0 auto;">
+<h1>Log In</h1>
+
+ {% if error %}
+  <p>{{error}}</p>
+ {% endif %}
+
+
+<form class="ui form" action="{% url 'login' %}" method="POST">
+  {% csrf_token %}
+  <p class="field">
+    <label for="username">Username</label>
+    <input type="text" name="username" required>
+  </p>
+  <p class="field">
+    <label for="password">Password</label>
+    <input type="password" name="password" required>
+  </p>
+  <button type="submit">Login</button>
+</form>
+<a href="{% url 'signup' %}">Don't have an account? Sign up here!</a>
+</section>
+
+{% endblock %}

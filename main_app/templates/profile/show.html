@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+<div class="ui celled grid container">
+  <div class="ui six wide column">
+    <img class="ui image small" src="{{profile.image}}" alt="user image">
+    <h2>{{ title }}</h2>
+    <p>From {{ profile.current_city }}</p>
+    <p>Joined Wayfarer on {{ profile.date_joined }}</p>
+      {% if request.user.id == profile.user.id %}
+        <div class="ui large buttons">
+          <a href="/profile/{{profile.id}}/edit" id="btn"><button class="ui green button">Edit</button></a>
+          <div class="or"></div>
+          <a href="/profile/{{profile.user.id}}/delete" id="btn"><button class="ui red button">Delete</button></a>
+        </div>
+      {% endif %}
+  </div>
+  <div class="ui six wide column">
+    <h2>{{ title }}'s Posts</h2>
+    {% for post in posts %}
+    <a href="/posts/{{ post.id }}"> 
+      <div class="ui relaxed link items"> 
+        <div class="item">
+          <a href="/posts/{{ post.id }}" class="ui tiny image">
+            <img src="{{post.city.image}}" alt="{{post.city.name}}">
+          </a>
+          <div class="middle aligned content">
+            <a href="/posts/{{ post.id }}" class="header">{{ post.city }}</a>
+            <div class="description">
+              <p>{{ post.title }}</p>
+            </div>
+          </div>
+      </div>
+    </a> 
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock %}
+
+<!-- <a href="/posts/{{ post.id }}"> 
+  <div class="ui fluid vertical menu">
+    <div class="vertically fitted item">{{ post.city }}
+      <img src="{{post.city.image}}" alt="{{post.city.name}}" class="ui right floated small image">
+    </div>  
+  </div>
+-->

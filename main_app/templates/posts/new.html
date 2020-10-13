@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1 class="ui header">Add new Post</h1>
+{% if error_message %}
+    <p class="red-text">{{ error_message }}</p>
+{% endif %}
+
+<form action= "{% url 'post_new' %}" method="POST">
+    {% csrf_token %}
+    {{ post_form.as_p}}
+    <input type="submit" class="ui green button" value="new post">
+</form>
+
+{% endblock %} 

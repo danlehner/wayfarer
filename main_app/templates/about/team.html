@@ -1,0 +1,88 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Team</title>
+  
+  <!-- LINKS  -->
+  <link rel="stylesheet" type="text/css" href="{% static '/styles/Semantic-UI-CSS-master/semantic.min.css' %}">
+  <link rel="stylesheet" href='{% static "/styles/main.css" %}'>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+  <!-- SCRIPTS  -->
+  <script defer
+    src="https://code.jquery.com/jquery-3.1.1.min.js"
+    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+    crossorigin="anonymous">
+  </script>
+  <script defer 
+    src="{% static '/styles/Semantic-UI-CSS-master/semantic.min.js' %}">
+  </script>
+  <script defer 
+    src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js">
+  </script>
+  <script defer 
+    src='{% static "/scripts/app.js" %}'>
+  </script>
+  </head>
+<body id="body">
+  <!-- NAVBAR -->
+  <nav class="ui borderless large menu" id="team_nav">
+    <div class="vertically fitted item">
+      <img src="/static/assets/wf_logo_yellow_sq.png">
+    </div>
+    <a href="/" class="item">wayfarer</a>
+  </nav>
+  <main class="ui one column stackable center aligned page grid">
+      <div class="ui eight column center aligned grid">
+        <div class="two wide column">
+            <img id="profile_pic" class="ui centered small image" src="https://res.cloudinary.com/dvk80uh1a/image/upload/v1602616037/linked-in-prof-pic_hayhqo.jpg">
+            <div class="ui hidden divider"></div>
+            <p>Dan Lehern</p>
+            <div class="ui vertical small buttons">
+            <a href="https://www.linkedin.com/in/daniel-lehner-79933a3a/">
+                <button class="ui linkedin button"><i class="linkedin icon"></i>LinkedIn</button>
+            </a>
+            <a href="mailto:LehnerDR@gmail.com">
+                <button class="ui red button"><i class="paper plane outline icon"></i>Email</button>
+            </a>
+            </div>
+        </div>
+        <div class="ui one wide column"></div>
+        <div class="two wide column">
+            <img id="profile_pic" class="ui centered small image" src="https://res.cloudinary.com/dvk80uh1a/image/upload/v1602283308/gdd2sructhkwh5ag2mo2.jpg">
+            <div class="ui hidden divider"></div>
+            <p>Jeffrey Thompson</p>
+            <div class="ui vertical small buttons">
+            <a href="https://www.linkedin.com/in/jeffreythompson42/">
+                <button class="ui linkedin button"><i class="linkedin icon"></i>LinkedIn</button>
+            </a>
+            <a href="mailto:jeffathomp@gmail.com">
+                <button class="ui red button"><i class="paper plane outline icon"></i>Email</button>
+            </a>
+            </div>
+        </div>
+        <div class="ui one wide column"></div>
+        <div class="two wide column">
+            <img id="profile_pic" class="ui centered small image" src="https://i.imgur.com/1CjvaAa.png">
+            <div class="ui hidden divider"></div>
+            <p>Jason Andersen</p>
+            <a href="https://www.linkedin.com/in/jason--andersen/">
+                <button class="ui linkedin tiny button"><i class="linkedin icon"></i>LinkedIn</button>
+            </a>
+            <a href="mailto:andersen.ja@gmail.com">
+                <button class="ui red button"><i class="paper plane outline icon"></i>Email</button>
+            </a>
+        </div>
+      </div>
+  </main>
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p> &copy; 2020 &nbsp Wayfarer &nbsp <a href="/team">Built by</a> </p>
+  </footer>
+</body>
+</html>

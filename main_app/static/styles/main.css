@@ -1,0 +1,242 @@
+/* ----- BRAND COLORS -----*/
+:root {
+    --backgroundcolor: #fffaf1ff;
+    --wayfarerRed: #d92027ff;
+    --wayfarerYellow: #ffcd3cff;
+    --wayfarerOrange: #ff9234ff;
+    --wayfarerGreen: #35d0baff;
+}
+
+
+/* ----- MAIN -----*/
+#body {
+    background-color: var(--backgroundcolor);
+    height: 100vh;
+}
+
+#nav {
+    background-color: var(--wayfarerYellow);
+    border-radius: 0px;
+}
+
+.ui.menu .item {
+    color: black;
+    font-weight: 900;
+    font-size: 16px;
+}
+
+.footer {
+    background-color: var(--backgroundcolor);
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+
+a:link {
+    color:var(--wayfarerGreen);
+}
+
+span:link {
+    color:var(--wayfarerGreen);
+}
+
+
+/* ----- BUTTONS -----*/
+.ui.button {
+    background-color: var(--backgroundcolor);
+    color: black;
+    font-weight: 900;
+    line-height: 0.7em; 
+}
+
+.ui.primary.button {
+    background-color: var(--backgroundcolor);
+    color: black;
+    font-weight: 900;
+    line-height: 0.7em; 
+}
+
+.ui.secondary.button {
+    background-color: var(--wayfarerGreen);
+}
+
+.ui.red.button {
+    background-color: var(--wayfarerRed);
+    color: black;
+    font-weight: 900;
+    line-height: 0.7em; 
+}
+
+.ui.orange.button {
+    background-color: var(--wayfarerOrange);
+    color: black;
+    font-weight: 900;
+    line-height: 0.7em; 
+}
+
+.ui.yellow.button{
+    background-color: var(--wayfarerYellow);
+    color: black;
+    font-weight: 900;
+    line-height: 0.7em; 
+}
+
+.ui.green.button{
+    background-color: var(--wayfarerGreen);
+    color: black;
+    font-weight: 900;
+    line-height: 0.7em; 
+}
+
+.yellow{
+    background-color: var(--wayfarerYellow); 
+}
+
+/* #submit-edit {
+    display: none; 
+} */
+
+
+/* ----- MAIN PAGE CAROUSEL-----*/
+#hero {
+    max-height: 30%;
+}
+
+
+
+/* ----- MODAL -----*/
+.ui.modal {
+    background-color: var(--backgroundcolor);
+}
+
+
+
+/* ----- SLICK SLIDER------ */
+.carousel-section {
+    position: relative;
+}
+
+.carousel-section-mobile {
+    display: none; 
+    margin: 20px auto; 
+    text-align: center;
+    position: relative; 
+    max-width: 50%; 
+}
+
+.carousel-section-mobile img {
+    width: 100%; 
+}
+
+@media screen and (max-width: 767px) {
+    .carousel-section {
+        display: none; 
+    }
+
+    .carousel-section-mobile {
+        display: block; 
+    }
+}
+
+
+.carousel {
+    margin: 50px;
+}
+
+.carousel div {
+    width: 90%; 
+    margin: 0 auto; 
+    height: auto;
+}
+
+.carousel img {
+    width: 100%;
+    height: 450px; 
+}
+
+.carousel-header, 
+.carousel-header-mobile {
+    background-color: var(--wayfarerRed);
+    color: white; 
+    padding: 10px; 
+}
+
+.carousel-header {
+    position: absolute; 
+    max-width: 400px; 
+    text-align: center;
+    top: 40%; 
+    left: 35%; 
+    font-size: 60px; 
+    z-index: 99;
+}
+
+.carousel-header-mobile {
+    font-size: .7em; 
+    position: absolute; 
+    top: 40%; 
+    left: 30%; 
+}
+
+.slick-prev:before, .slick-next:before { 
+    color:red !important; 
+    font-size: 40px !important; 
+}
+
+
+
+
+/* ----- CITIES PAGE -----*/
+#post_menu {
+    width: 100%;
+}
+.ui.floated.vertical.pointing.menu {
+    width: 100%;
+}
+
+#city_head {
+    height: 300px !important;
+}
+
+#edit_buttons{
+    position:absolute;
+    bottom: 100px; 
+}
+
+.red.plus.circle.icon{
+    position:absolute;
+    right: 10px;
+}
+
+
+
+
+/* ----- TEAM PAGE -----*/
+#team_nav {
+    background-color: var(--wayfarerYellow);
+    border-radius: 0px;
+    height: 64px;
+}
+
+#profile_pic {
+    object-fit: cover;
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+}
+
+.ui.eight.column.center.aligned.grid{
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+/* .two.column{
+    padding-left: 100px;
+    padding-right: 10px;
+} */ 

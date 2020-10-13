@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1 class="ui header huge">{{post.city}}</h1>
+
+
+<!-- EDIT FORM -->
+<form action="{% url 'post_edit' post.id %}" method="POST">
+    {% csrf_token %}
+    {{ post_form.as_p}}
+    <input type="submit" class="ui green button" value="Update {{post.city}} post!">
+</form>
+
+{% endblock %}
