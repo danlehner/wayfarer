@@ -17,7 +17,7 @@ import environ
 
 env = environ.Env(
     # set casting, default value
-    DEBUG=(bool, True)
+    DEBUG=(bool, False)
 )
 # reading .env file
 environ.Env.read_env()
@@ -36,7 +36,7 @@ SECRET_KEY = env('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env('DEBUG')
 
-ALLOWED_HOSTS = ['wayfarer301.herokuapp.com/']
+ALLOWED_HOSTS = ['wayfarer301.herokuapp.com']
 
 
 # Application definition
