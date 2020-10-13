@@ -14,9 +14,9 @@
   <div class="content">
     <div class="ui huge header">{{ post.title }}
       <div class="ui sub header">
-          <img  src="{{user.profile.image}}" alt="user image" class="ui avatar image">
-          <a href="{% url 'profile_show' user.profile.id %}">
-            <span>{{ user }}</span> 
+          <img  src="{{post.author.image}}" alt="user image" class="ui avatar image">
+          <a href="{% url 'profile_show' post.author.id %}">
+            <span>{{ post.author }}</span> 
           </a>
       </div>
       <div class="ui sub header">
@@ -88,6 +88,7 @@
       </div>
     {% endfor %}
   </div>
+  <div class="ui hidden divider"></div>
 </div>
 
 <div class="ui comment modal">
@@ -99,7 +100,7 @@
           {{ comment_form.as_p}}
           <input type="submit" class="ui yellow button" value="Add New Comment">
       </form>
-  </div> 
+  </div>
 </div>
 
 {% endblock %}

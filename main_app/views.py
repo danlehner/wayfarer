@@ -9,6 +9,12 @@ from django.views.decorators.csrf import csrf_exempt
 
 
 # Create your views here.
+
+# ==== ABOUT TEAM ==== #
+def our_team(request):
+  return render(request, 'about/team.html')
+
+
 # ===== MAIN ===== #
 def home(request): 
   context = {'title': 'Wayfarer'}
@@ -154,4 +160,8 @@ def profile_delete(request, user_id):
   if request.user.id == user.id:
     user.delete() 
   return redirect("/")
+
+
+
+
 

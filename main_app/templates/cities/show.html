@@ -7,6 +7,13 @@
     <div class="ui yellow five wide column">
         <div class= "ui header">All Cities</div>        
         {% for town in towns %}
+        <!-- <div class="ui fluid vertical pointing menu">
+            <a  class="item">
+                {{town.name}}
+                <img href="{% url 'city_show' town.id %}" src="{{town.image}}" alt="{{town.name}}" class="ui left floated mini image"> 
+            </a>
+          </div> -->
+        
         <a href="{% url 'city_show' town.id %}">
             <div class="ui fluid vertical pointing menu">   
                 <div class="ui item">{{town.name}}
@@ -16,16 +23,18 @@
         </a>
         {% endfor %}
     </div>
+    
     <!-- RIGHT POST SHOW -->
     <div class="ui eleven wide column">
         <div class="ui vertically divided relaxed grid container">
+            <!-- CITY IMAGE & INFO -->
             <div class="ui right floated row"> 
                 <div class="ui header" id="city_head"></div>
                 <img src="{{city.image}}" alt="{{city.name}}" class="ui medium image">
             </div>
             <div class="row">
                 <div class="ui header">{{city.name}}: &nbsp Posts
-                   <a  id="app_post">
+                   <a id="app_post">
                         <i class="red plus large circle icon" ></i>
                    </a>
                 </div>
@@ -48,10 +57,10 @@
                     </div>
                 {% endfor %}
                 </div>
-            </div>
         </div>
     </div>
 </div>
+
 
 <!-- ADD POST MODALS -->
 <div class="ui post modal">

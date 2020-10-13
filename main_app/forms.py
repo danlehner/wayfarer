@@ -12,8 +12,8 @@ class Post_Form(ModelForm):
     model = Post
     fields = ['title', 'text', 'city']
 
+
 class Comment_Form(ModelForm): 
   class Meta: 
     model = Comment
     fields = ['text']
-    
