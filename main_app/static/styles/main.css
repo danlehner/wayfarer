@@ -11,6 +11,7 @@
 /* ----- MAIN -----*/
 #body {
     background-color: var(--backgroundcolor);
+    height: 100vh;
 }
 
 #nav {
@@ -226,7 +227,7 @@ span:link {
     width: 100px;
 }
 
-.ui.three.column.center.aligned.grid{
+.ui.eight.column.center.aligned.grid{
     margin: 0;
     position: absolute;
     top: 50%;
@@ -235,7 +236,7 @@ span:link {
     transform: translate(-50%, -50%);
 }
 
-.two.column{
+/* .two.column{
     padding-left: 100px;
     padding-right: 10px;
-}
+} */ 
