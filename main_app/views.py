@@ -11,7 +11,7 @@ def home(request):
   context = {'title': 'Wayfarer'}
   return render(request, 'home.html', context)
 
-# ===== MAIN ===== #
+# ===== ABOUT ===== #
 def about(request):
   context = {'title': 'About Wayfarer'}
   return render(request, 'about.html', context)
