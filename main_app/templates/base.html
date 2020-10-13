@@ -41,7 +41,7 @@
       <span class="item">wayfarer</span>
     </a>
     {% if user.is_authenticated %}
-    <a href="/cities/2" class="item">cities</a>
+    <a href="{% url 'city_show' 1 %}" class="item">cities</a>
     <div class="right menu">
       <div class="item">
         <a href="{% url 'logout' %}" class="ui button" id="btn"> logout</a>
