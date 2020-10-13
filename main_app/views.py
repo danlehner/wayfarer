@@ -5,6 +5,7 @@ from .forms import Profile_Form, Post_Form, Comment_Form
 from django.contrib.auth.models import User
 from django.http import JsonResponse
 from django.core import serializers
+from django.views.decorators.csrf import csrf_exempt
 
 
 # Create your views here.
@@ -98,20 +99,19 @@ def add_comment(request, post_id):
 
 # comment edit
 @login_required
+@csrf_exempt
 def edit_comment(request, comment_id): 
   comment = Comment.objects.get(id=comment_id)
   if request.method == 'POST': 
     if request.user.id == comment.commenter.user.id: 
-      comment_form = Comment_Form(request.POST, instance=comment)
-      if comment_form.is_valid(): 
-        comment_form.save()
-        return redirect('post_show', post_id=comment.post.id)
+      import json
+      data = json.loads(request.body)['text']
+      comment.text = data
+      comment.save() 
+      return redirect('post_show', post_id=comment.post.id)
   else: 
     comment_json = serializers.serialize('python', [comment])
     return JsonResponse(comment_json, safe=False)
-
-
-
 
 
 # comment delete

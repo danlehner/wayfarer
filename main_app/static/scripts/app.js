@@ -19,6 +19,10 @@ $('#app_comment').on('click', function(){
     $('.comment.modal').modal('show'); 
 }); 
 
+$(document).ready(function(){ 
+    $('.submit-edit').hide() 
+})
+
 $('.app_comment_edit').on('click', function(){
    const elm = $(this).parent().parent().children()[0]
    fetch(`/posts/${this.id}/edit_comment`)
@@ -27,8 +31,25 @@ $('.app_comment_edit').on('click', function(){
    })
    .then(function(json){
        const comment = json[0].fields
-       $(elm).html(`<textarea>${comment.text}</textarea>`)
+       $(elm).html(`<textarea id='textarea-edit'>${comment.text}</textarea>`)
+       $('.submit-edit').show() 
    })
+})
+
+$('.submit-edit').on('click', function() {
+    const elm = $('#textarea-edit')
+    fetch(`/posts/${this.id}/edit_comment`, {
+        method: 'POST', 
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            text: elm.val()
+        })
+    })
+    .then(function() {
+        window.location.reload()
+    })
 })
 
 $('.carousel').slick({

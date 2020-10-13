@@ -93,7 +93,9 @@ span:link {
     background-color: var(--wayfarerYellow); 
 }
 
-
+/* #submit-edit {
+    display: none; 
+} */
 
 
 /* ----- MAIN PAGE CAROUSEL-----*/
