@@ -75,14 +75,16 @@
         <div class="metadata">
           <span class="date">{{ comment.date_commented }}</span>
         </div>
-        <div class="text">
-          {{ comment.text }}
-        </div>
-        {% if request.user.id == comment.commenter.id %}
+        <div class="text comment-text">
+          <p id="text-{{ comment.id }}">{{ comment.text }}</p>
+          <p class="ui button green tiny submit-edit" id="{{ comment.id }}">Submit edit</p>
+          {% if request.user.id == comment.commenter.id %}
           <div class="actions">
+            <a class="ui blue app_comment_edit" id="{{ comment.id }}">Edit</a>
             <a style="color: red;" href="{% url 'delete_comment' comment.id %}">Delete</a>
           </div>
         {% endif %}
+        </div>
       </div>
     {% endfor %}
   </div>

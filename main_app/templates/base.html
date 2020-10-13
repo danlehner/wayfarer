@@ -34,10 +34,12 @@
   
   <!-- NAVBAR -->
   <nav class="ui borderless large menu" id="nav">
-    <div class="vertically fitted item">
-      <img src="/static/assets/wf_logo_yellow_sq.png">
-    </div>
-    <a href="/" class="item">wayfarer</a>
+    <a href="/" class="item">
+      <div class="vertically fitted item">
+        <img src="/static/assets/wf_logo_yellow_sq.png">
+      </div>
+      <span class="item">wayfarer</span>
+    </a>
     {% if user.is_authenticated %}
     <a href="/cities/2" class="item">cities</a>
     <div class="right menu">

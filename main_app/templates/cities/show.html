@@ -39,20 +39,30 @@
                    </a>
                 </div>
             </div>
-            <!-- ALL POSTS IN CITY -->
-            <div class="ui vertical menu" id="post_menu">
-            {% for post in posts %}
-                <div class=" ui item">
-                    <a href="/posts/{{ post.id }}" > 
-                        <h4 class="ui header">Title: {{ post.title }}</h4>
-                        <h5>{{ post.text }}</h5>
-                    </a>
+                <div class="ui vertical menu" id="post_menu">
+                {% for post in posts %}
+                    <div>
+                        <a href="/posts/{{ post.id }}" > 
+                            <div class="ui left floated">
+                                <div class="ui red ribbon label">
+                                    <i class="pencil alternate icon"></i> {{ post.author.name }}
+                                </div>
+                                <img src="{{ post.author.image }}" alt="" class="ui small image">
+                            </div>
+                            <div class="ui floated right">
+                                <h4 class="ui header">Title: {{ post.title }}</h4>
+                                <h5>{{ post.text }}</h5>
+                            </div>
+                        </a>
+                    </div>
+                {% endfor %}
                 </div>
-            {% endfor %}
-            </div>
         </div>
     </div>
 </div>
+<div class="ui hidden divider"></div>
+<div class="ui hidden divider"></div>
+<div class="ui hidden divider"></div>
 
 
 <!-- ADD POST MODALS -->

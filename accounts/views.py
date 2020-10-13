@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect
 from django.contrib import auth
 from django.contrib.auth.models import User
 from main_app.models import Profile
+from wayfarer_project.settings import EMAIL_HOST_USER
+from django.core.mail import send_mail
 
 # Create your views here.
 
@@ -33,8 +35,16 @@ def signup(request):
         user.save() 
         profile = Profile(current_city=current_city, name=name, user=user, image=image)
         profile.save()
-        return redirect('/accounts/login')
+        email = user.email
+        return redirect(f'/accounts/send_email/{email}')
   return render(request, 'signup.html')
+
+def send_email(request, email):
+  subject = 'Meet the Wayfarer Team'
+  message = 'Wayfarer is a tech demo constructed by in less than a week by a three person team new to its underlying technologies: Django, Postgres SQL Database, and Semantic-UI.\n\n If you like what you see maybe, you would like to work with one or all of us.\n\n Jeffrey Thompson - jeffathomp@gmail.com\n Dan Lehner - LehnerDR@gmail.com\n Jason Andersen - andersen.ja@gmail.com\n\n Sincerely,\n The Wayfarer Team'  
+  recipient = email
+  send_mail(subject, message, EMAIL_HOST_USER, [recipient], fail_silently=False)
+  return redirect('/accounts/login')
 
 def login(request): 
     if request.method == 'POST': 

@@ -10,6 +10,7 @@ margin: 0 auto;">
   <p>{{error}}</p>
  {% endif %}
 
+
 <form class="ui form" action="{% url 'login' %}" method="POST">
   {% csrf_token %}
   <p class="field">
@@ -22,6 +23,7 @@ margin: 0 auto;">
   </p>
   <button type="submit">Login</button>
 </form>
+<a href="{% url 'signup' %}">Don't have an account? Sign up here!</a>
 </section>
 
 {% endblock %}
