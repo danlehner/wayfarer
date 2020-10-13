@@ -108,8 +108,9 @@ span:link {
     background-color: var(--backgroundcolor);
 }
 
-/* ----- SLICK SLIDER------ */
 
+
+/* ----- SLICK SLIDER------ */
 .carousel-section {
     position: relative;
 }
@@ -151,11 +152,6 @@ span:link {
 
 
 /* ----- CITIES PAGE -----*/
-/* .ui.container {
-    margin: 0;
-    width: 100%;
-} */
-
 #post_menu {
     width: 100%;
 }
@@ -171,6 +167,7 @@ span:link {
     position:absolute;
     bottom: 100px; 
 }
+
 .red.plus.circle.icon{
     position:absolute;
     right: 10px;
