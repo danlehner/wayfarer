@@ -28,7 +28,7 @@ def home(request):
 ## ===== CITY ===== #
 # city routes
 @login_required
-def city_show(request, city_id):
+def city_show(request, city_id=1):
   city = City.objects.get(id = city_id)
   towns = City.objects.all()
   posts = city.post_set.all()
