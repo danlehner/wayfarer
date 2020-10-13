@@ -125,7 +125,7 @@ STATIC_URL = '/static/'
 LOGOUT_REDIRECT_URL ='/'
 
 # Email Settings
-EMAIL_BACKEND = 'django.core.mail'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'wayfarer301@gmail.com'
 EMAIL_HOST_PASSWORD = 'Dell&725'
