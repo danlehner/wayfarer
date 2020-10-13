@@ -4,9 +4,6 @@ from . import views
 urlpatterns = [
   # ===== MAIN ===== #
   path('', views.home, name='home'),
-  
-  # ===== ABOUT ===== #
-  path('about/', views.about, name='about'),
 
   # ===== CITY ===== #
   path('cities/<int:city_id>/', views.city_show, name='city_show'),
