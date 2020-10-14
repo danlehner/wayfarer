@@ -17,6 +17,11 @@ We have been commissioned to build a travel community, code-named Project Wayfar
 
 ![Imgur](https://i.imgur.com/pmNS56Ql.jpg)
 
+Tech:
+Django<br>
+Postgres<br>
+Semantic UI<br>
+<br>
 
 
 
