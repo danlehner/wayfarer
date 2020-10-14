@@ -91,11 +91,11 @@
   <div class="ui hidden divider"></div>
 </div>
 
-<div class="ui comment modal">
+<div class="ui comment small modal">
   <i class="close icon"></i>
   <div class="header">Add Comment</div>
   <div class="content">
-      <form class="ui form" action= "{% url 'add_comment' post.id %}" method="POST">
+      <form class="ui form wayfarer_modal" action= "{% url 'add_comment' post.id %}" method="POST">
           {% csrf_token %}
           {{ comment_form.as_p}}
           <input type="submit" class="ui yellow button" value="Add New Comment">
