@@ -22,7 +22,7 @@ We have been commissioned to build a travel community, code-named Project Wayfar
 
 ### Wireframes
 ## MAIN LANDING PAGE THE 
-![Imgur](https://i.imgur.com/xKa3sPKl.jpg)
+![Imgur](https://i.imgur.com/q7BLX3Jl.jpg)
 
 <br>
 <hr>
@@ -35,3 +35,15 @@ We have been commissioned to build a travel community, code-named Project Wayfar
 
 ## POST SHOW PAGE
 ![Imgur](https://i.imgur.com/xKa3sPKl.jpg)
+
+<br>
+<hr>
+
+## POST SHOW EDIT
+![Imgur](https://i.imgur.com/jRBsmW0l.jpg)
+
+<br>
+<hr>
+
+## USER SHOW
+![Imgur](https://i.imgur.com/9h3XDG1l.jpg)
