@@ -207,7 +207,7 @@ span:link {
     right: 10px;
 }
 
-/*-- menu right--*/
+/*-- city menu left--*/
 .ui.fluid.vertical.pointing.menu {
     position: relative;
 }
@@ -217,12 +217,14 @@ span:link {
     margin: 2px;
 }
 
-#city_header{
+#city_header_text{
     position: absolute;
     width: 100%;
     font-size: 16px;
     font-weight: bold;
     vertical-align: middle;
+    padding-top: 10px;
+    padding-left: 50px;
 }
 
 

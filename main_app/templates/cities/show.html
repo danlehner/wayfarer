@@ -9,9 +9,13 @@
         {% for town in towns %}
         <a class="ui item" href="{% url 'city_show' town.id %}">
             <div class="ui fluid vertical pointing menu">   
-                <div id="city_header">{{town.name}}
+                <div>
                     <img src="{{town.image}}" alt="{{town.name}}" class="ui left floated mini image" id="city_image">  
+                    <div id="city_header_text"> &nbsp {{town.name}}</div>
                 </div>
+                
+                
+                
             </div>
         </a>
         {% endfor %}
