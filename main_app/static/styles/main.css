@@ -8,6 +8,7 @@
 }
 
 
+
 /* ----- MAIN -----*/
 #body {
     background-color: var(--backgroundcolor);
@@ -41,6 +42,7 @@ a:link {
 span:link {
     color:var(--wayfarerGreen);
 }
+
 
 
 /* ----- BUTTONS -----*/
@@ -94,9 +96,7 @@ span:link {
     background-color: var(--wayfarerYellow); 
 }
 
-/* #submit-edit {
-    display: none; 
-} */
+
 
 
 /* ----- MAIN PAGE CAROUSEL-----*/
@@ -110,6 +110,7 @@ span:link {
 .ui.modal {
     background-color: var(--backgroundcolor);
 }
+
 
 
 
@@ -139,7 +140,6 @@ span:link {
         display: block; 
     }
 }
-
 
 .carousel {
     margin: 50px;
@@ -236,10 +236,6 @@ span:link {
     transform: translate(-50%, -50%);
 }
 
-/* .two.column{
-    padding-left: 100px;
-    padding-right: 10px;
-} */ 
 
 
 
