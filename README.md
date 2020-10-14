@@ -47,3 +47,27 @@ We have been commissioned to build a travel community, code-named Project Wayfar
 
 ## USER SHOW
 ![Imgur](https://i.imgur.com/9h3XDG1l.jpg)
+
+<br>
+<hr>
+
+## USER EDIT
+![Imgur]()
+
+<br>
+<hr>
+
+## LOGIN MODAL
+![Imgur]()
+
+<br>
+<hr>
+
+## SIGNUP MODAL
+![Imgur]()
+
+<br>
+<hr>
+
+## WAYFARER ERD
+![Imgur]()
