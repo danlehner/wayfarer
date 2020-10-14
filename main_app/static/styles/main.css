@@ -222,6 +222,10 @@ span:link {
     margin: 2px;
 }
 
+#city_image_main {
+    max-height: 350px; 
+}
+
 #city_header_text{
     position: absolute;
     width: 100%;
