@@ -3,7 +3,7 @@
 ---
 
 Class: SEI WC/17 Remote <br>
-Dev Team:
+Dev Team: <br>
 Jason Andersen <br>
 Dan Lehern <br>
 Jeff Thompson <br>
