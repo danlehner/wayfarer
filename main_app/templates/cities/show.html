@@ -4,7 +4,7 @@
 
 <div class="ui grid container">
     <!-- LEFT CITY CONTAINER -->
-    <div class="ui yellow five wide column">
+    <div id="left_menu" class="ui five wide column">
         <div class= "ui header">All Cities</div>        
         {% for town in towns %}
         <a class="ui item" href="{% url 'city_show' town.id %}">
@@ -12,10 +12,7 @@
                 <div>
                     <img src="{{town.image}}" alt="{{town.name}}" class="ui left floated mini image" id="city_image">  
                     <div id="city_header_text"> &nbsp {{town.name}}</div>
-                </div>
-                
-                
-                
+                </div> 
             </div>
         </a>
         {% endfor %}
