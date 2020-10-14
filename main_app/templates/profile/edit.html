@@ -4,10 +4,21 @@
 <div class="ui celled grid container">
   <div class="ui six wide column">
     <img class="ui image small" src="{{profile.image}}" alt="user image">
-    <form action="{% url 'profile_edit' profile.id %}" method="POST">
+    <form class="ui form wayfarer_modal" action="{% url 'profile_edit' profile.id %}" method="POST">
       <h2>Edit {{ title }}</h2>
       {% csrf_token %}
-      {{ profile_form.as_p }}
+      <p class="field">
+        <label for="name">Name</label>
+        {{ profile_form.name }}</p>
+
+      <p class="field">
+        <label for="current_city">Current city</label>
+        {{ profile_form.current_city }}</p>
+
+      <p class="field">
+        <label for="image">Link to an image</label>
+        {{ profile_form.image }}</p>
+
       <button type="submit" class="ui button green" id="btn">Submit</button>
     </form>
   </div>

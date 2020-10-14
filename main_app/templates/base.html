@@ -13,6 +13,7 @@
   <link rel="stylesheet" href='{% static "/styles/main.css" %}'>
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+  
   <!-- SCRIPTS  -->
   <script defer
     src="https://code.jquery.com/jquery-3.1.1.min.js"
@@ -29,9 +30,8 @@
     src='{% static "/scripts/app.js" %}'>
   </script>
 </head>
+
 <body id="body">
-  
-  
   <!-- NAVBAR -->
   <nav class="ui borderless large menu" id="nav">
     <a href="/" class="item">
@@ -41,7 +41,7 @@
       <span class="item">wayfarer</span>
     </a>
     {% if user.is_authenticated %}
-    <a href="/cities/2" class="item">cities</a>
+    <a href="{% url 'city_show' 1 %}" class="item">cities</a>
     <div class="right menu">
       <div class="item">
         <a href="{% url 'logout' %}" class="ui button" id="btn"> logout</a>
@@ -73,22 +73,22 @@
 
   <!-- MODALS FOR LOGIN & SIGNUP -->
   <section id="login_modal">
-    <div class="ui login modal">
+    <div class="ui login tiny modal">
       <i class="close icon"></i>
       <div class="header">
         Login
       </div>
         <div class="content">
-          <form class="ui form" action="{% url 'login' %}" method="POST">
+          <form class="ui form wayfarer_modal" action="{% url 'login' %}" method="POST">
             {% csrf_token %}
             <p class="field">
               <label for="username">Username</label>
-              <input type="text" name="username" required>
-            </p>
+              <input type="text" name="username" required></p>
+            
             <p class="field">
               <label for="password">Password</label>
-              <input type="password" name="password" required>
-            </p>
+              <input type="password" name="password" required></p>
+            
             <div class="actions">
               <button class="ui yellow cancel button" type="submit">Cancel</button>
               <button class="ui green button" type="submit">Login</button>
@@ -99,38 +99,41 @@
   </section>
   
   <section id="signup_modal">
-    <div class="ui signup modal">
+    <div class="ui signup tiny modal">
       <i class="close icon"></i>
       <div class="header">
-        Login
+        Signup for an account
       </div>
         <div class="content">
-          <form class="ui form" action="{% url 'signup' %}" method="POST">
+          <form class="ui form wayfarer_modal" action="{% url 'signup' %}" method="POST">
             {% csrf_token %}
             <p class="field">
+              <label for="username">Username</label>
+              <input type="text" name="username" maxlength="25" minlength="2" required></p>
+            
+            <p class="field">
+              <label for="email">Email</label>
+              <input type="text" name="email" maxlength="25" minlength="2" required></p>
+            
+            <p class="field">
+              <label for="password">Password</label>
+              <input type="password" name="password" maxlength="50" minlength="4" required></p>
+            
+            <p class="field">
               <label for="name">Full Name</label>
-              <input type="text" name="name" maxlength="50" minlength="2" required>
-            </p>
+              <input type="text" name="name" maxlength="50" minlength="2" required></p>
+            
             <p class="field">
               <label for="current_city">Current City</label>
-              <input type="text" name="current_city" maxlength="50" minlength="2" required>
-            </p>
-              <p class="field">
-                <label for="username">Username</label>
-                <input type="text" name="username" maxlength="25" minlength="2" required>
-              </p>
-              <p class="field">
-              <label for="image">Link to a picture of you (optional):</label>
-              <input type="text" name="image">
-              </p>
-              <p class="field">
-                <label for="email">Email</label>
-                <input type="text" name="email" maxlength="25" minlength="2" required>
-              </p>
-              <p class="field">
-                <label for="password">Password</label>
-                <input type="password" name="password" maxlength="50" minlength="4" required>
-              </p>
+              <input type="text" name="current_city" maxlength="50" minlength="2" required></p>
+            
+            <div class="ui horizontal divider">
+              You can update this in Profile:
+            </div>
+            
+            <p class="field">
+              <label for="image">Link to a picture of you:</label>
+              <input type="text" name="image"></p>
             <div class="actions">
               <button class="ui yellow cancel button" type="submit">Cancel</button>
               <button class="ui green button" type="submit">Signup</button>
@@ -140,7 +143,6 @@
     </div> 
   </section>
   
-
   <!-- FOOTER -->
   <footer class="footer">
     <p> &copy; 2020 &nbsp Wayfarer &nbsp <a href="/team">Built by</a> </p>

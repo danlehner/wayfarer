@@ -8,6 +8,7 @@
 }
 
 
+
 /* ----- MAIN -----*/
 #body {
     background-color: var(--backgroundcolor);
@@ -41,6 +42,7 @@ a:link {
 span:link {
     color:var(--wayfarerGreen);
 }
+
 
 
 /* ----- BUTTONS -----*/
@@ -94,9 +96,7 @@ span:link {
     background-color: var(--wayfarerYellow); 
 }
 
-/* #submit-edit {
-    display: none; 
-} */
+
 
 
 /* ----- MAIN PAGE CAROUSEL-----*/
@@ -110,6 +110,7 @@ span:link {
 .ui.modal {
     background-color: var(--backgroundcolor);
 }
+
 
 
 
@@ -139,7 +140,6 @@ span:link {
         display: block; 
     }
 }
-
 
 .carousel {
     margin: 50px;
@@ -192,12 +192,9 @@ span:link {
 #post_menu {
     width: 100%;
 }
-.ui.floated.vertical.pointing.menu {
-    width: 100%;
-}
 
 #city_head {
-    height: 300px !important;
+    height: 300px;
 }
 
 #edit_buttons{
@@ -208,6 +205,26 @@ span:link {
 .red.plus.circle.icon{
     position:absolute;
     right: 10px;
+}
+
+/*-- city menu left--*/
+.ui.fluid.vertical.pointing.menu {
+    position: relative;
+}
+
+#city_image{
+    border-radius: 3px;
+    margin: 2px;
+}
+
+#city_header_text{
+    position: absolute;
+    width: 100%;
+    font-size: 16px;
+    font-weight: bold;
+    vertical-align: middle;
+    padding-top: 10px;
+    padding-left: 50px;
 }
 
 
@@ -236,7 +253,17 @@ span:link {
     transform: translate(-50%, -50%);
 }
 
-/* .two.column{
-    padding-left: 100px;
-    padding-right: 10px;
-} */ 
+
+
+
+/* ----- STATIC FORMS -----*/
+.ui.form.wayfarer {
+    width: 50%; 
+    margin: 0 auto;
+}
+
+
+.ui.form.wayfarer_modal {
+    width: 80%; 
+    margin: 0 auto;
+}
