@@ -21,9 +21,11 @@ margin: 0 auto;">
     <label for="password">Password</label>
     <input type="password" name="password" required>
   </p>
-  <button type="submit">Login</button>
+  <button class="ui green button" type="submit">Login</button>
 </form>
-<a href="{% url 'signup' %}">Don't have an account? Sign up here!</a>
+<div class="ui hidden divider"></div>
+<p class="ui center aligned container">Don't have an account, &nbsp <a href="{% url 'signup' %}">Sign up here!</a></p>
+
 </section>
 
 {% endblock %}
