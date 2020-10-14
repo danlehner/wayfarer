@@ -240,3 +240,11 @@ span:link {
     padding-left: 100px;
     padding-right: 10px;
 } */ 
+
+
+
+/* ----- STATIC FORMS -----*/
+.ui.form.wayfarer {
+    width: 50%; 
+    margin: 0 auto;
+}

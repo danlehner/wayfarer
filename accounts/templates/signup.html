@@ -1,47 +1,47 @@
 {% extends 'base.html' %}
 {% block content %}
 
-
-<section style="width: 50%;
-margin: 0 auto;">
+<!-- STATIC SIGNUP -->
+<section class="ui form wayfarer">
 <h1>Sign Up</h1>
   {% if error %}
     <h4 style="color: var(--wayfarerRed);">{{ error }}</h4>
-  {% endif %}
+  
+    {% endif %}
   <form class="ui form" action="{% url 'signup' %}" method="POST">
     {% csrf_token %}
     <p class="field">
       <label for="name">Full Name</label>
-      <input type="text" name="name" maxlength="50" minlength="2" required>
-    </p>
-    <p class="field">
-      <label for="current_city">Current City</label>
-      <input type="text" name="current_city" maxlength="50" minlength="2" required>
-    </p>
+      <input type="text" name="name" maxlength="50" minlength="2" required></p>
+    
+      <p class="field">
+        <label for="current_city">Current City</label>
+        <input type="text" name="current_city" maxlength="50" minlength="2" required></p>
+      
       <p class="field">
         <label for="username">Username</label>
-        <input type="text" name="username" maxlength="25" minlength="2" required>
-      </p>
+        <input type="text" name="username" maxlength="25" minlength="2" required></p>
+      
       <p class="field">
         <label for="image">Link to a picture of you (optional):</label>
-        <input type="text" name="image">
-      </p>
+        <input type="text" name="image"></p>
+      
       <p class="field">
         <label for="email">Email</label>
-        <input type="text" name="email" maxlength="25" minlength="2" required>
-      </p>
+        <input type="text" name="email" maxlength="25" minlength="2" required></p>
+      
       <p class="field">
         <label for="password">Password</label>
-        <input type="password" name="password" maxlength="50" minlength="4" required>
-      </p>
-    <button class="ui green button"  type="submit">Sign Up</button>
+        <input type="password" name="password" maxlength="50" minlength="4" required></p>
+    
+      <button class="ui green button"  type="submit">Sign Up</button>
   </form>
 </section>
 
 {% endblock %}
 
+<!-- JAVASCRIPT -->
 <script>
-
 $('.ui.form')
   .form({
     fields: {
