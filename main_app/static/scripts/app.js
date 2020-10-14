@@ -58,9 +58,10 @@ $('.carousel').slick({
     arrows: true, 
     autoplay: true
 });
+
 $('#app_post_delete').on('click', function(){
     console.log("click");
-    $('.small.modal').modal('show');
+    $('#delete_modal').modal('show');
 });
 
 $(document).ready(function() {
