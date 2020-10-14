@@ -66,15 +66,27 @@
 
 
 <!-- ADD POST MODALS -->
-<div class="ui post modal">
+<div class="ui post tiny modal">
     <i class="close icon"></i>
     <div class="header">Add Post</div>
     <div class="content">
-        <form class="ui form" action= "{% url 'post_new' %}" method="POST">
+        <form class="ui form wayfarer_modal" action= "{% url 'post_new' %}" method="POST">
             {% csrf_token %}
-            {{ post_form.as_p}}
-            <input type="submit" class="ui green button" value="new post">
+            <p class="field">
+                <label for="title">Title</label>
+                {{ post_form.title }}</p>
+
+            <p class="field">
+                <label for="text">Text</label>
+                {{ post_form.text }}</p>
+
+            <p class="field">
+                <label for="city">City</label>
+                {{ post_form.city }}</p>
+
+            <input type="submit" class="ui green button" value="post!">
         </form>
     </div> 
 </div>
+
 {% endblock content %}
