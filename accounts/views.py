@@ -41,7 +41,7 @@ def signup(request):
 
 def send_email(request, email):
   subject = 'Meet the Wayfarer Team'
-  message = 'Wayfarer is a tech demo constructed by in less than a week by a three person team new to its underlying technologies: Django, Postgres SQL Database, and Semantic-UI.\n\n If you like what you see maybe, you would like to work with one or all of us.\n\n Jeffrey Thompson - jeffathomp@gmail.com\n Dan Lehner - LehnerDR@gmail.com\n Jason Andersen - andersen.ja@gmail.com\n\n Sincerely,\n The Wayfarer Team'  
+  message = 'Wayfarer is a tech demo constructed by in less than a week by a three person team new to its underlying technologies: Django, Postgres SQL Database, and Semantic-UI.\n\n If you like what you see, maybe you would like to work with one or all of us.\n\n Jeffrey Thompson - jeffathomp@gmail.com\n Dan Lehner - LehnerDR@gmail.com\n Jason Andersen - andersen.ja@gmail.com\n\n Sincerely,\n The Wayfarer Team'  
   recipient = email
   send_mail(subject, message, EMAIL_HOST_USER, [recipient], fail_silently=False)
   return redirect('/accounts/login')
