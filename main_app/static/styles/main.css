@@ -244,3 +244,9 @@ span:link {
     width: 50%; 
     margin: 0 auto;
 }
+
+
+.ui.form.wayfarer_modal {
+    width: 80%; 
+    margin: 0 auto;
+}

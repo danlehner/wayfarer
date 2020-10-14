@@ -73,13 +73,13 @@
 
   <!-- MODALS FOR LOGIN & SIGNUP -->
   <section id="login_modal">
-    <div class="ui login modal">
+    <div class="ui login tiny modal">
       <i class="close icon"></i>
       <div class="header">
         Login
       </div>
         <div class="content">
-          <form class="ui form" action="{% url 'login' %}" method="POST">
+          <form class="ui form wayfarer_modal" action="{% url 'login' %}" method="POST">
             {% csrf_token %}
             <p class="field">
               <label for="username">Username</label>
@@ -99,38 +99,41 @@
   </section>
   
   <section id="signup_modal">
-    <div class="ui signup modal">
+    <div class="ui signup tiny modal">
       <i class="close icon"></i>
       <div class="header">
-        Login
+        Signup for an account
       </div>
         <div class="content">
-          <form class="ui form" action="{% url 'signup' %}" method="POST">
+          <form class="ui form wayfarer_modal" action="{% url 'signup' %}" method="POST">
             {% csrf_token %}
             <p class="field">
+              <label for="username">Username</label>
+              <input type="text" name="username" maxlength="25" minlength="2" required></p>
+            
+            <p class="field">
+              <label for="email">Email</label>
+              <input type="text" name="email" maxlength="25" minlength="2" required></p>
+            
+            <p class="field">
+              <label for="password">Password</label>
+              <input type="password" name="password" maxlength="50" minlength="4" required></p>
+            
+            <p class="field">
               <label for="name">Full Name</label>
-              <input type="text" name="name" maxlength="50" minlength="2" required>
-            </p>
+              <input type="text" name="name" maxlength="50" minlength="2" required></p>
+            
             <p class="field">
               <label for="current_city">Current City</label>
-              <input type="text" name="current_city" maxlength="50" minlength="2" required>
-            </p>
-              <p class="field">
-                <label for="username">Username</label>
-                <input type="text" name="username" maxlength="25" minlength="2" required>
-              </p>
-              <p class="field">
-              <label for="image">Link to a picture of you (optional):</label>
-              <input type="text" name="image">
-              </p>
-              <p class="field">
-                <label for="email">Email</label>
-                <input type="text" name="email" maxlength="25" minlength="2" required>
-              </p>
-              <p class="field">
-                <label for="password">Password</label>
-                <input type="password" name="password" maxlength="50" minlength="4" required>
-              </p>
+              <input type="text" name="current_city" maxlength="50" minlength="2" required></p>
+            
+            <div class="ui horizontal divider">
+              You can update this in Profile:
+            </div>
+            
+            <p class="field">
+              <label for="image">Link to a picture of you:</label>
+              <input type="text" name="image"></p>
             <div class="actions">
               <button class="ui yellow cancel button" type="submit">Cancel</button>
               <button class="ui green button" type="submit">Signup</button>
