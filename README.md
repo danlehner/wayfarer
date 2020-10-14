@@ -5,7 +5,7 @@
 Class: SEI WC/17 Remote <br>
 Dev Team: <br>
 Jason Andersen <br>
-Dan Lehern <br>
+Dan Lehner <br>
 Jeff Thompson <br>
 
 ---
@@ -52,22 +52,22 @@ We have been commissioned to build a travel community, code-named Project Wayfar
 <hr>
 
 ## USER EDIT
-![Imgur]()
+![Imgur](https://i.imgur.com/EuE53cSl.jpg)
 
 <br>
 <hr>
 
 ## LOGIN MODAL
-![Imgur]()
+![Imgur](https://i.imgur.com/eFvOPHkl.jpg)
 
 <br>
 <hr>
 
 ## SIGNUP MODAL
-![Imgur]()
+![Imgur](https://i.imgur.com/dgvW0Y9l.jpg)
 
 <br>
 <hr>
 
 ## WAYFARER ERD
-![Imgur]()
+![Imgur](https://i.imgur.com/f0jDAQzl.jpg)
