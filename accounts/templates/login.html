@@ -1,29 +1,28 @@
 {% extends 'base.html' %}
 {% block content %}
 
-
-<section style="width: 50%;
-margin: 0 auto;">
+<!-- STATIC LOGIN -->
+<section class="ui form wayfarer">
 <h1>Log In</h1>
-
  {% if error %}
   <p>{{error}}</p>
- {% endif %}
-
-
+ 
+  {% endif %}
 <form class="ui form" action="{% url 'login' %}" method="POST">
   {% csrf_token %}
   <p class="field">
     <label for="username">Username</label>
-    <input type="text" name="username" required>
-  </p>
+    <input type="text" name="username" required></p>
+  
   <p class="field">
     <label for="password">Password</label>
-    <input type="password" name="password" required>
-  </p>
-  <button type="submit">Login</button>
+    <input type="password" name="password" required></p>
+  
+  <button class="ui green button" type="submit">Login</button>
 </form>
-<a href="{% url 'signup' %}">Don't have an account? Sign up here!</a>
+
+<div class="ui hidden divider"></div>
+<p class="ui center aligned container">Don't have an account, &nbsp <a href="{% url 'signup' %}">Sign up here!</a></p>
 </section>
 
 {% endblock %}

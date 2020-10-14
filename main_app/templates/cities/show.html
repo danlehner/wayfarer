@@ -4,25 +4,20 @@
 
 <div class="ui grid container">
     <!-- LEFT CITY CONTAINER -->
-    <div class="ui yellow five wide column">
-        <div class= "ui header">All Cities</div>        
+    <div id="left_menu" class="ui five wide column">
+    <div class= "ui header">All Cities</div>        
         {% for town in towns %}
-        <!-- <div class="ui fluid vertical pointing menu">
-            <a  class="item">
-                {{town.name}}
-                <img href="{% url 'city_show' town.id %}" src="{{town.image}}" alt="{{town.name}}" class="ui left floated mini image"> 
-            </a>
-          </div> -->
-        
-        <a href="{% url 'city_show' town.id %}">
+        <a class="item" href="{% url 'city_show' town.id %}">
             <div class="ui fluid vertical pointing menu">   
-                <div class="ui item">{{town.name}}
-                    <img src="{{town.image}}" alt="{{town.name}}" class="ui left floated mini image">  
-                </div>
+                <div>
+                    <img src="{{town.image}}" alt="{{town.name}}" class="ui left floated mini image" id="city_image">  
+                    <div id="city_header_text"> &nbsp {{town.name}}</div>
+                </div> 
             </div>
         </a>
         {% endfor %}
     </div>
+    
     
     <!-- RIGHT POST SHOW -->
     <div class="ui eleven wide column">
@@ -30,7 +25,7 @@
             <!-- CITY IMAGE & INFO -->
             <div class="ui right floated row"> 
                 <div class="ui header" id="city_head"></div>
-                <img src="{{city.image}}" alt="{{city.name}}" class="ui medium image">
+                <img src="{{city.image}}" alt="{{city.name}}" class="ui medium image" id="city_image_main">
             </div>
             <div class="row">
                 <div class="ui header">{{city.name}}: &nbsp Posts
@@ -66,15 +61,27 @@
 
 
 <!-- ADD POST MODALS -->
-<div class="ui post modal">
+<div class="ui post tiny modal">
     <i class="close icon"></i>
     <div class="header">Add Post</div>
     <div class="content">
-        <form class="ui form" action= "{% url 'post_new' %}" method="POST">
+        <form class="ui form wayfarer_modal" action= "{% url 'post_new' %}" method="POST">
             {% csrf_token %}
-            {{ post_form.as_p}}
-            <input type="submit" class="ui green button" value="new post">
+            <p class="field">
+                <label for="title">Title</label>
+                {{ post_form.title }}</p>
+
+            <p class="field">
+                <label for="text">Text</label>
+                {{ post_form.text }}</p>
+
+            <p class="field">
+                <label for="city">City</label>
+                {{ post_form.city }}</p>
+
+            <input type="submit" class="ui green button" value="post!">
         </form>
     </div> 
 </div>
+
 {% endblock content %}
