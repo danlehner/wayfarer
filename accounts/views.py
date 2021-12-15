@@ -36,7 +36,7 @@ def signup(request):
         profile = Profile(current_city=current_city, name=name, user=user, image=image)
         profile.save()
         email = user.email
-        return redirect(f'/accounts/send_email/{email}')
+        return redirect('/accounts/login')
   return render(request, 'signup.html')
 
 def send_email(request, email):
